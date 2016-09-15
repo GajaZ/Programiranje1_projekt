@@ -18,4 +18,6 @@ Za vsako igro sem zajela naslednje podatke:
 Vsi podatki, razen ocen kritikov, so zajeti na spletni strani SteamSpy in se nanašajo na igre, ki jih uporabnik lahko dobi preko Steam-a.
 
 ##Analiza:
+Analizirala bom priljubljenost iger v odvisnosti od distributerja, cene in žanra.
+Pri tem si bom pomagala z grafi, stolpičnim in tortnim diagramom.
 

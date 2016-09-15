@@ -1,0 +1,2197 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<meta charset="utf-8"/>
+<title>Massively - Genre Stats - SteamSpy - All the data and stats about Steam games</title>
+
+<meta property="og:title" content="Massively - Genre Stats - "/>
+<meta property="og:site_name" content="SteamSpy - All the data about Steam games"/>
+<meta property="og:description" content="Steam Spy automatically gathers data from Steam user profiles, analyzes it and presents in simple, yet beautiful, manner. Steam Spy is designed to be helpful for indie developers, journalists, students and all parties interested in PC gaming and its current state of affairs."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="article:author" content="https://www.facebook.com/galyonkin"/>
+<meta property="og:image" content="http://steamspy.com/assets/img/mascot.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="apple-touch-icon" href="/pages/ico/60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/pages/ico/76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/pages/ico/120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/pages/ico/152.png">
+<link rel="shortcut icon" href="/pages/ico/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+
+<link href="/assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen"/>
+<link media="screen" type="text/css" rel="stylesheet" href="/assets/plugins/nvd3/nv.d3.min.css"></link>
+
+<link rel="stylesheet" href="/theme/css/message.css" type="text/css"/>
+
+<link type="text/css" rel="stylesheet" href="/assets/plugins/jquery-datatable/media/css/jquery.dataTables.css">
+<link type="text/css" rel="stylesheet" href="/assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css">
+<link media="screen" type="text/css" rel="stylesheet" href="/assets/plugins/datatables-responsive/css/datatables.responsive.css">
+<link media="screen" type="text/css" rel="stylesheet" href="http:////cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.css">
+
+<link href="/pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+<link class="main-stylesheet" href="/pages/css/pages.css" rel="stylesheet" type="text/css"/>
+<link href="/css/steamspy.css?14" rel="stylesheet" type="text/css">
+<!--[if lte IE 9]>
+        <link href="pages/css/ie9.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+<script type="text/javascript">
+    window.onload = function()
+    {
+      // fix for windows 8
+      if (navigator.appVersion.indexOf("Windows NT 6.2") != -1)
+        document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="/pages/css/windows.chrome.fix.css" />'
+    }
+    </script>
+</head>
+<body class="fixed-header">
+
+<script src="/assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-bez/jquery.bez.min.js"></script>
+<script src="/assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/assets/plugins/jquery-actual/jquery.actual.min.js"></script>
+<script src="/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="/assets/plugins/jquery-form/global.js"></script>
+
+<script type="text/javascript" src="/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+<script src="/assets/plugins/datatables-responsive/js/datatables.responsive.js" type="text/javascript"></script>
+<script src="/assets/plugins/datatables-responsive/js/lodash.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+<div class="page-sidebar" data-pages="sidebar">
+<div id="appMenu" class="sidebar-overlay-slide from-top">
+</div>
+
+<div class="sidebar-header">
+<a href=/><img src="/assets/img/logo_white.png" alt="logo" class="brand" data-src="/assets/img/logo_white.png" data-src-retina="/assets/img/logo_white_2x.png" width="80" height="18"></a>
+<div class="sidebar-header-controls">
+</div>
+</div>
+
+
+<div class="sidebar-menu">
+<ul class="menu-items">
+<li class="m-t-30">
+<a href="/" class="detailed">
+<span class="title">Home</span>
+</a>
+<span class="icon-thumbnail bg-success"><a href="/" class="detailed"><i class="pg-home"></i></a></span>
+</li>
+<li class="">
+<a href="/search.php">
+<span class="title">Search</span>
+</a>
+<span class="icon-thumbnail "><a href="/search.php"><i class="pg-search"></i></a></span>
+</li>
+<li class="">
+<a href="/deal/">
+<span class="title">Deals</span>
+</a>
+<span class="icon-thumbnail "><a href="/deal/"><i class="fa fa-shopping-basket"></i></a></span>
+</li>
+<li class="">
+<a href="/sale/">
+<span class="title">Sales</span>
+</a>
+<span class="icon-thumbnail "><a href="/sale/"><i class="fa fa-level-up"></i></a></span>
+</li>
+<li class="">
+<a href="javascript:;">
+<span class="title">Countries</span>
+<span class=" arrow"></span>
+</a>
+<span class="icon-thumbnail"><i class="fa fa-globe"></i></span>
+<ul class="sub-menu">
+<li class="">
+<a href="/country/">Summary</a>
+<span class="icon-thumbnail"></span>
+</li>
+<li class="">
+<a href="/country/US">United States</a>
+<span class="icon-thumbnail"><a href="/country/US">US</a></span>
+</li>
+<li class="">
+<a href="/country/RU">Russia</a>
+<span class="icon-thumbnail"><a href="/country/RU">RU</a></span>
+</li>
+<li class="">
+<a href="/country/DE">Germany</a>
+<span class="icon-thumbnail"><a href="/country/DE">DE</a></span>
+</li>
+<li class="">
+<a href="/country/BR">Brazil</a>
+<span class="icon-thumbnail"><a href="/country/BR">BR</a></span>
+</li>
+<li class="">
+<a href="/country/GB">United Kingdom</a>
+<span class="icon-thumbnail"><a href="/country/GB">GB</a></span>
+</li>
+<li class="">
+<a href="/country/FR">France</a>
+<span class="icon-thumbnail"><a href="/country/FR">FR</a></span>
+</li>
+<li class="">
+<a href="/country/CN">China</a>
+<span class="icon-thumbnail"><a href="/country/CN">CN</a></span>
+</li>
+<li class="">
+<a href="/country/CA">Canada</a>
+<span class="icon-thumbnail"><a href="/country/CA">CA</a></span>
+</li>
+<li class="">
+<a href="/country/PL">Poland</a>
+<span class="icon-thumbnail"><a href="/country/PL">PL</a></span>
+</li>
+<li class="">
+<a href="/country/AU">Australia</a>
+<span class="icon-thumbnail"><a href="/country/AU">AU</a></span>
+</li>
+</ul>
+</li>
+<li class="">
+<a href="javascript:;">
+<span class="title">Languages</span>
+<span class=" arrow"></span>
+</a>
+<span class="icon-thumbnail"><i class="fa fa-language"></i></span>
+<ul class="sub-menu">
+<li class="">
+<a href="/language/English">English</a>
+<span class="icon-thumbnail"><a href="/language/English">EN</a></span>
+</li>
+<li class="">
+<a href="/language/Russian">Russian</a>
+<span class="icon-thumbnail"><a href="/language/Russian">RU</a></span>
+</li>
+<li class="">
+<a href="/language/German">German</a>
+<span class="icon-thumbnail"><a href="/language/German">DE</a></span>
+</li>
+<li class="">
+<a href="/language/Spanish">Spanish</a>
+<span class="icon-thumbnail"><a href="/language/Spanish">SP</a></span>
+</li>
+<li class="">
+<a href="/language/Chinese">Chinese</a>
+<span class="icon-thumbnail"><a href="/language/Chinese">CH</a></span>
+</li>
+<li class="">
+<a href="/language/French">French</a>
+<span class="icon-thumbnail"><a href="/language/French">FR</a></span>
+</li>
+<li class="">
+<a href="/language/Polish">Polish</a>
+<span class="icon-thumbnail"><a href="/language/Polish">PL</a></span>
+</li>
+<li class="">
+<a href="/language/Turkish">Turkish</a>
+<span class="icon-thumbnail"><a href="/language/Turkish">TR</a></span>
+</li>
+<li class="">
+<a href="/language/Swedish">Swedish</a>
+<span class="icon-thumbnail"><a href="/language/Swedish">SW</a></span>
+</li>
+</ul>
+</li>
+<li class="">
+<a href="javascript:;">
+<span class="title">Companies</span>
+<span class=" arrow"></span>
+</a>
+<span class="icon-thumbnail"><i class="fa fa-briefcase"></i></span>
+<ul class="sub-menu">
+<li class="">
+<a href="/dev/2K+Games">2K</a>
+<span class="icon-thumbnail"><a href="/dev/2K+Games">2K</a></span>
+</li>
+<li class="">
+<a href="/dev/Activision">Activision</a>
+<span class="icon-thumbnail"><a href="/dev/Activision">Ac</a></span>
+</li>
+<li class="">
+<a href="/dev/Electronic+Arts">EA</a>
+<span class="icon-thumbnail"><a href="/dev/Electronic+Arts">EA</a></span>
+</li>
+<li class="">
+<a href="/dev/Bethesda+Softworks">Bethesda</a>
+<span class="icon-thumbnail"><a href="/dev/Bethesda+Softworks">Bs</a></span>
+</li>
+<li class="">
+<a href="/dev/Klei+Entertainment">Klei</a>
+<span class="icon-thumbnail"><a href="/dev/Klei+Entertainment">Kl</a></span>
+</li>
+<li class="">
+<a href="/dev/Paradox+Interactive">Paradox</a>
+<span class="icon-thumbnail"><a href="/dev/Paradox+Interactive">Pd</a></span>
+</li>
+<li class="">
+<a href="/dev/SEGA">SEGA</a>
+<span class="icon-thumbnail"><a href="/dev/SEGA">Se</a></span>
+</li>
+<li class="">
+<a href="/dev/Ubisoft">Ubisoft</a>
+<span class="icon-thumbnail"><a href="/dev/Ubisoft">Ub</a></span>
+</li>
+<li class="">
+<a href="/dev/Valve">Valve</a>
+<span class="icon-thumbnail"><a href="/dev/Valve">Vl</a></span>
+</li>
+<li class="">
+<a href="/dev/Warner+Bros.+Interactive+Entertainment">Warner</a>
+<span class="icon-thumbnail"><a href="/dev/Warner+Bros.+Interactive+Entertainment">Wa</a></span>
+</li>
+</ul>
+</li>
+<li class="">
+<a href="javascript:;">
+<span class="title">Genres</span>
+<span class=" arrow"></span>
+</a>
+<span class="icon-thumbnail"><i class="fa fa-star"></i></span>
+<ul class="sub-menu">
+<li class="">
+<a href="/genre/Action">Action</a>
+<span class="icon-thumbnail"><a href="/genre/Action">Ac</a></span>
+</li>
+<li class="">
+<a href="/genre/Strategy">Strategy</a>
+<span class="icon-thumbnail"><a href="/genre/Strategy">St</a></span>
+</li>
+<li class="">
+<a href="/genre/RPG">RPG</a>
+<span class="icon-thumbnail"><a href="/genre/RPG">Rp</a></span>
+</li>
+<li class="">
+<a href="/genre/Indie">Indie</a>
+<span class="icon-thumbnail"><a href="/genre/Indie">In</a></span>
+</li>
+<li class="">
+<a href="/genre/Adventure">Adventure</a>
+<span class="icon-thumbnail"><a href="/genre/Adventure">Ad</a></span>
+</li>
+<li class="">
+<a href="/genre/Sports">Sports</a>
+<span class="icon-thumbnail"><a href="/genre/Sports">Sp</a></span>
+</li>
+<li class="">
+<a href="/genre/Simulation">Simulation</a>
+<span class="icon-thumbnail"><a href="/genre/Simulation">Si</a></span>
+</li>
+<li class="">
+<a href="/genre/Early+Access">Early Access</a>
+<span class="icon-thumbnail"><a href="/genre/Early+Access">Ea</a></span>
+</li>
+<li class="">
+<a href="/genre/Ex+Early+Access">Ex Early Access</a>
+<span class="icon-thumbnail"><a href="/genre/Ex+Early+Access">Ee</a></span>
+</li>
+<li class="">
+<a href="/genre/Massively">MMO</a>
+<span class="icon-thumbnail"><a href="/genre/Massively">Mo</a></span>
+</li>
+<li class="">
+<a href="/genre/Free">Free</a>
+<span class="icon-thumbnail"><a href="/genre/Free">Fr</a></span>
+</li>
+</ul>
+</li>
+<li class="">
+<a href="javascript:;">
+<span class="title">Tags</span>
+<span class=" arrow"></span>
+</a>
+<span class="icon-thumbnail"><i class="fa fa-tags"></i></span>
+<ul class="sub-menu">
+<li class="">
+<a href="/tag/">Summary</a>
+<span class="icon-thumbnail"></span>
+</li>
+<li class="">
+<a href="/tag/Atmospheric">Atmospheric</a>
+<span class="icon-thumbnail"><a href="/tag/Atmospheric">At</a></span>
+</li>
+<li class="">
+<a href="/tag/Crafting">Crafting</a>
+<span class="icon-thumbnail"><a href="/tag/Crafting">Cr</a></span>
+</li>
+<li class="">
+<a href="/tag/Experimental">Experimental</a>
+<span class="icon-thumbnail"><a href="/tag/Experimental">Ex</a></span>
+</li>
+<li class="">
+<a href="/tag/Female+Protagonist">Female Protagonist</a>
+<span class="icon-thumbnail"><a href="/tag/Female+Protagonist">FP</a></span>
+</li>
+<li class="">
+<a href="/tag/Kickstarter">Kickstarter</a>
+<span class="icon-thumbnail"><a href="/tag/Kickstarter">KS</a></span>
+</li>
+<li class="">
+<a href="/tag/Open+World">Open World</a>
+<span class="icon-thumbnail"><a href="/tag/Open+World">OW</a></span>
+</li>
+<li class="">
+<a href="/tag/Remake">Remake</a>
+<span class="icon-thumbnail"><a href="/tag/Remake">Re</a></span>
+</li>
+<li class="">
+<a href="/tag/Space+Sim">Space Sim</a>
+<span class="icon-thumbnail"><a href="/tag/Space+Sim">SS</a></span>
+</li>
+<li class="">
+<a href="/tag/Stealth">Stealth</a>
+<span class="icon-thumbnail"><a href="/tag/Stealth">St</a></span>
+</li>
+<li class="">
+<a href="/tag/Warhammer+40K">Warhammer 40K</a>
+<span class="icon-thumbnail"><a href="/tag/Warhammer+40K">WH</a></span>
+</li>
+<li class="">
+<a href="/tag/Zombies">Zombies</a>
+<span class="icon-thumbnail"><a href="/tag/Zombies">Zb</a></span>
+</li>
+</ul>
+</li>
+<li class="">
+<a href="javascript:;">
+<span class="title">Years</span>
+<span class=" arrow"></span>
+</a>
+<span class="icon-thumbnail"><i class="fa fa-calendar"></i></span>
+<ul class="sub-menu">
+<li class="">
+<a href="/year/">Summary</a>
+<span class="icon-thumbnail"></span>
+</li>
+<li class="">
+<a href="/year/2016">2016</a>
+<span class="icon-thumbnail"><a href="/year/2016">16</a></span>
+</li>
+<li class="">
+<a href="/year/2015">2015</a>
+<span class="icon-thumbnail"><a href="/year/2015">15</a></span>
+</li>
+<li class="">
+<a href="/year/2014">2014</a>
+<span class="icon-thumbnail"><a href="/year/2014">14</a></span>
+</li>
+<li class="">
+<a href="/year/2013">2013</a>
+<span class="icon-thumbnail"><a href="/year/2013">13</a></span>
+</li>
+<li class="">
+<a href="/year/2012">2012</a>
+<span class="icon-thumbnail"><a href="/year/2012">12</a></span>
+</li>
+<li class="">
+<a href="/year/2011">2011</a>
+<span class="icon-thumbnail"><a href="/year/2011">11</a></span>
+</li>
+<li class="">
+<a href="/year/2010">2010</a>
+<span class="icon-thumbnail"><a href="/year/2010">10</a></span>
+</li>
+<li class="">
+<a href="/year/2009">2009</a>
+<span class="icon-thumbnail"><a href="/year/2009">09</a></span>
+</li>
+<li class="">
+<a href="/year/2008">2008</a>
+<span class="icon-thumbnail"><a href="/year/2008">08</a></span>
+</li>
+</ul>
+</li>
+<li class="">
+<a href="/about">
+<span class="title">About</span>
+</a>
+<span class="icon-thumbnail "><a href="/about"><i class="fa fa-question"></i></a></span>
+</li>
+<li class="">
+<a href="/feedback">
+<span class="title">Feedback</span>
+</a>
+<span class="icon-thumbnail "><a href="/feedback"><i class="fa fa-comments"></i></a></span>
+</li>
+<hr>
+
+<li class="">
+<a href="/login/">
+<span class="title">Login</span>
+</a>
+<span class="icon-thumbnail "><a href="/login/"><i class="fa fa-sign-in"></i></a></span>
+</li>
+<li class="">
+<a href="/register/">
+<span class="title">Register</span>
+</a>
+<span class="icon-thumbnail "><a href="/register/"><i class="fa fa-user"></i></a></span>
+</li>
+</ul>
+<div class="clearfix"></div>
+</div>
+
+</div>
+
+
+<div class="page-container">
+
+
+<div class="header ">
+
+
+<div class="pull-left full-height visible-sm visible-xs">
+
+<div class="sm-action-bar">
+<a href="#" class="btn-link toggle-sidebar" data-toggle="sidebar">
+<span class="icon-set menu-hambuger"></span>
+</a>
+</div>
+
+</div>
+
+<div class="pull-right full-height visible-sm visible-xs">
+
+
+</div>
+
+<div class=" pull-left sm-table">
+<div class="header-inner">
+<div class="brand inline m-l-90">
+<a href=/><img src="/assets/img/logo.png?2" alt="logo" data-src="/assets/img/logo.png?2" data-src-retina="/assets/img/logo_2x.png?2" style="max-width: 225px; width:100%"></a>
+</div>
+</div>
+</div>
+<div class="pull-right hidden-sm hidden-xs">
+<div class="header-inner">
+<form role="search" method="get" class="search-form" action="/search.php">
+<div class="input-group transparent">
+<span class="input-group-addon">
+<i class="fa fa-search"></i>
+</span>
+<input type="text" placeholder="Search" name="s" class="form-control">
+</div>
+</form>
+</div>
+</div>
+<div class=" pull-right sm-table">
+</div>
+</div>
+
+
+
+<div class="page-content-wrapper">
+
+<div class="content">
+
+<div class="jumbotron" data-pages="parallax">
+<div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+<div class="inner">
+
+<ul class="breadcrumb">
+<li>
+<p>Genre</p>
+</li>
+<li>Massively </li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid container-fixed-lg">
+
+<div class="row">
+<div class="col-md-12 col-lg-8 col-sm-12 m-t-10 m-b-10 full-height">
+<div class="widget-11 panel no-border  no-margin">
+<div class="panel-heading ">
+<div class="panel-title">Games released in Massively genre
+</div>
+</div>
+<table id="gamesbygenre" class="table table-hover table-striped" cellspacing="0" width="100%">
+<thead>
+<tr>
+<th>#</th>
+<th>Game</th>
+<th class="treleasedate">Release date</th>
+<th class="tprice"><div data-toggle="tooltip" title="The last detected price in the US. Prices vary by region.">Price</div></th><th class="tuserscore"><div data-toggle="tooltip" title="Score rank of X% means that this game has userscore equal or greater than X% of Steam games.">Score rank<br>(Userscore / Metascore)</div></th>
+<th><div data-toggle="tooltip" title="How many people own this game on Steam. Might be vastly different from sales.">Owners</div></th><th class="tplaytime"><div data-toggle="tooltip" title="Mean average and median time spent in this game since March 2009.">Playtime (Median)</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td data-order="EVE Online"><a href=/app/8500><img src="http://cdn.akamai.steamstatic.com/steam/apps/8500/capsule_184x69.jpg" class="img-ss-list"> EVE Online</a></td>
+<td class="treleasedate" data-order="2010-12-15">Dec 15, 2010</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="59">59% (83%/88%)</td><td data-order="344883">344,883 <font class="small">&plusmn;15,189</font></td><td class="tplaytime" data-order="8722">145:22 (22:25)</td></tr>
+<tr>
+<td>2</td>
+<td data-order="The Lord of the Rings Online"><a href=/app/212500><img src="http://cdn.akamai.steamstatic.com/steam/apps/212500/capsule_184x69.jpg" class="img-ss-list"> The Lord of the Rings Online</a></td>
+<td class="treleasedate" data-order="2012-06-06">Jun 6, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="54">54% (81%/86%)</td><td data-order="1975491">1,975,491 <font class="small">&plusmn;36,264</font></td><td class="tplaytime" data-order="1785">29:45 (01:24)</td></tr>
+<tr>
+<td>3</td>
+<td data-order="Path of Exile"><a href=/app/238960><img src="http://cdn.akamai.steamstatic.com/steam/apps/238960/capsule_184x69.jpg" class="img-ss-list"> Path of Exile</a></td>
+<td class="treleasedate" data-order="2013-10-23">Oct 23, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="88">88% (93%/86%)</td><td data-order="5376451">5,376,451 <font class="small">&plusmn;59,515</font></td><td class="tplaytime" data-order="2979">49:39 (04:01)</td></tr>
+<tr>
+<td>4</td>
+<td data-order="RIFT"><a href=/app/39120><img src="http://cdn.akamai.steamstatic.com/steam/apps/39120/capsule_184x69.jpg" class="img-ss-list"> RIFT</a></td>
+<td class="treleasedate" data-order="2011-03-01">Mar 1, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="49">49% (79%/84%)</td><td data-order="2432939">2,432,939 <font class="small">&plusmn;40,216</font></td><td class="tplaytime" data-order="2651">44:11 (03:42)</td></tr>
+<tr>
+<td>5</td>
+<td data-order="PlanetSide 2"><a href=/app/218230><img src="http://cdn.akamai.steamstatic.com/steam/apps/218230/capsule_184x69.jpg" class="img-ss-list"> PlanetSide 2</a></td>
+<td class="treleasedate" data-order="2012-11-20">Nov 20, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="61">61% (84%/84%)</td><td data-order="6331146">6,331,146 <font class="small">&plusmn;64,488</font></td><td class="tplaytime" data-order="1704">28:24 (03:08)</td></tr>
+<tr>
+<td>6</td>
+<td data-order="FINAL FANTASY XIV: A Realm Reborn"><a href=/app/39210><img src="http://cdn.akamai.steamstatic.com/steam/apps/39210/capsule_184x69.jpg" class="img-ss-list"> FINAL FANTASY XIV: A Realm Reborn</a></td>
+<td class="treleasedate" data-order="2014-02-18">Feb 18, 2014</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="69">69% (87%/83%)</td><td data-order="461305">461,305 <font class="small">&plusmn;17,564</font></td><td class="tplaytime" data-order="11924">198:44 (36:47)</td></tr>
+<tr>
+<td>7</td>
+<td data-order="EverQuest II"><a href=/app/201230><img src="http://cdn.akamai.steamstatic.com/steam/apps/201230/capsule_184x69.jpg" class="img-ss-list"> EverQuest II</a></td>
+<td class="treleasedate" data-order="2011-12-07">Dec 7, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="39">39% (74%/83%)</td><td data-order="531789">531,789 <font class="small">&plusmn;18,856</font></td><td class="tplaytime" data-order="1993">33:13 (02:31)</td></tr>
+<tr>
+<td>8</td>
+<td data-order="WildStar"><a href=/app/376570><img src="http://cdn.akamai.steamstatic.com/steam/apps/376570/capsule_184x69.jpg" class="img-ss-list"> WildStar</a></td>
+<td class="treleasedate" data-order="2016-06-09">Jun 9, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="41">41% (75%/82%)</td><td data-order="690291">690,291 <font class="small">&plusmn;21,478</font></td><td class="tplaytime" data-order="340">05:40 (01:32)</td></tr>
+<tr>
+<td>9</td>
+<td data-order="Realm of the Mad God"><a href=/app/200210><img src="http://cdn.akamai.steamstatic.com/steam/apps/200210/capsule_184x69.jpg" class="img-ss-list"> Realm of the Mad God</a></td>
+<td class="treleasedate" data-order="2012-02-20">Feb 20, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="56">56% (82%/82%)</td><td data-order="2565667">2,565,667 <font class="small">&plusmn;41,290</font></td><td class="tplaytime" data-order="1141">19:01 (01:21)</td></tr>
+<tr>
+<td>10</td>
+<td data-order="War Thunder"><a href=/app/236390><img src="http://cdn.akamai.steamstatic.com/steam/apps/236390/capsule_184x69.jpg" class="img-ss-list"> War Thunder</a></td>
+<td class="treleasedate" data-order="2013-08-15">Aug 15, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="59">59% (83%/82%)</td><td data-order="9461213">9,461,213 <font class="small">&plusmn;78,452</font></td><td class="tplaytime" data-order="2583">43:03 (04:51)</td></tr>
+<tr>
+<td>11</td>
+<td data-order="Marvel Heroes 2015"><a href=/app/226320><img src="http://cdn.akamai.steamstatic.com/steam/apps/226320/capsule_184x69.jpg" class="img-ss-list"> Marvel Heroes 2015</a></td>
+<td class="treleasedate" data-order="2013-06-03">Jun 3, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="52">52% (80%/81%)</td><td data-order="4662665">4,662,665 <font class="small">&plusmn;55,484</font></td><td class="tplaytime" data-order="1785">29:45 (01:11)</td></tr>
+<tr>
+<td>12</td>
+<td data-order="Elite: Dangerous"><a href=/app/359320><img src="http://cdn.akamai.steamstatic.com/steam/apps/359320/capsule_184x69.jpg" class="img-ss-list"> Elite: Dangerous</a></td>
+<td class="treleasedate" data-order="2015-04-02">Apr 2, 2015</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="26">26% (66%/80%)</td><td data-order="819863">819,863 <font class="small">&plusmn;23,403</font></td><td class="tplaytime" data-order="3627">60:27 (16:11)</td></tr>
+<tr>
+<td>13</td>
+<td data-order="ArcheAge"><a href=/app/304030><img src="http://cdn.akamai.steamstatic.com/steam/apps/304030/capsule_184x69.jpg" class="img-ss-list"> ArcheAge</a></td>
+<td class="treleasedate" data-order="2015-03-26">Mar 26, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="16">16% (57%/80%)</td><td data-order="1014835">1,014,835 <font class="small">&plusmn;26,030</font></td><td class="tplaytime" data-order="2753">45:53 (02:47)</td></tr>
+<tr>
+<td>14</td>
+<td data-order="iRacing"><a href=/app/266410><img src="http://cdn.akamai.steamstatic.com/steam/apps/266410/capsule_184x69.jpg" class="img-ss-list"> iRacing</a></td>
+<td class="treleasedate" data-order="2015-01-12">Jan 12, 2015</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="69">69% (87%/79%)</td><td data-order="15955">15,955 <font class="small">&plusmn;3,268</font></td><td class="tplaytime" data-order="2375">39:35 (01:19)</td></tr>
+<tr>
+<td>15</td>
+<td data-order="Ragnarok"><a href=/app/215100><img src="http://cdn.akamai.steamstatic.com/steam/apps/215100/capsule_184x69.jpg" class="img-ss-list"> Ragnarok</a></td>
+<td class="treleasedate" data-order="2013-10-31">Oct 31, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="49">49% (79%/79%)</td><td data-order="445700">445,700 <font class="small">&plusmn;17,265</font></td><td class="tplaytime" data-order="1288">21:28 (00:27)</td></tr>
+<tr>
+<td>16</td>
+<td data-order="Bloodline Champions"><a href=/app/6370><img src="http://cdn.akamai.steamstatic.com/steam/apps/6370/capsule_184x69.jpg" class="img-ss-list"> Bloodline Champions</a></td>
+<td class="treleasedate" data-order="2011-10-28">Oct 28, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="69">69% (87%/79%)</td><td data-order="615774">615,774 <font class="small">&plusmn;20,288</font></td><td class="tplaytime" data-order="629">10:29 (01:10)</td></tr>
+<tr>
+<td>17</td>
+<td data-order="TERA"><a href=/app/323370><img src="http://cdn.akamai.steamstatic.com/steam/apps/323370/capsule_184x69.jpg" class="img-ss-list"> TERA</a></td>
+<td class="treleasedate" data-order="2015-05-05">May 5, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="56">56% (82%/77%)</td><td data-order="3515277">3,515,277 <font class="small">&plusmn;48,261</font></td><td class="tplaytime" data-order="1594">26:34 (04:04)</td></tr>
+<tr>
+<td>18</td>
+<td data-order="WAKFU"><a href=/app/215080><img src="http://cdn.akamai.steamstatic.com/steam/apps/215080/capsule_184x69.jpg" class="img-ss-list"> WAKFU</a></td>
+<td class="treleasedate" data-order="2014-09-18">Sep 18, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="52">52% (80%/76%)</td><td data-order="1056038">1,056,038 <font class="small">&plusmn;26,551</font></td><td class="tplaytime" data-order="1225">20:25 (01:41)</td></tr>
+<tr>
+<td>19</td>
+<td data-order="Star Trek Online"><a href=/app/9900><img src="http://cdn.akamai.steamstatic.com/steam/apps/9900/capsule_184x69.jpg" class="img-ss-list"> Star Trek Online</a></td>
+<td class="treleasedate" data-order="2012-01-31">Jan 31, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="45">45% (77%/76%)</td><td data-order="1490166">1,490,166 <font class="small">&plusmn;31,519</font></td><td class="tplaytime" data-order="4865">81:05 (05:30)</td></tr>
+<tr>
+<td>20</td>
+<td data-order="Vindictus"><a href=/app/212160><img src="http://cdn.akamai.steamstatic.com/steam/apps/212160/capsule_184x69.jpg" class="img-ss-list"> Vindictus</a></td>
+<td class="treleasedate" data-order="2012-06-22">Jun 22, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="43">43% (76%/76%)</td><td data-order="900517">900,517 <font class="small">&plusmn;24,524</font></td><td class="tplaytime" data-order="2334">38:54 (02:31)</td></tr>
+<tr>
+<td>21</td>
+<td data-order="Star Conflict"><a href=/app/212070><img src="http://cdn.akamai.steamstatic.com/steam/apps/212070/capsule_184x69.jpg" class="img-ss-list"> Star Conflict</a></td>
+<td class="treleasedate" data-order="2013-02-27">Feb 27, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="56">56% (82%/75%)</td><td data-order="1797176">1,797,176 <font class="small">&plusmn;34,598</font></td><td class="tplaytime" data-order="852">14:12 (01:28)</td></tr>
+<tr>
+<td>22</td>
+<td data-order="Stronghold Kingdoms"><a href=/app/47410><img src="http://cdn.akamai.steamstatic.com/steam/apps/47410/capsule_184x69.jpg" class="img-ss-list"> Stronghold Kingdoms</a></td>
+<td class="treleasedate" data-order="2012-02-27">Feb 27, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="28">28% (67%/75%)</td><td data-order="1299578">1,299,578 <font class="small">&plusmn;29,443</font></td><td class="tplaytime" data-order="5257">87:37 (00:56)</td></tr>
+<tr>
+<td>23</td>
+<td data-order="Neverwinter"><a href=/app/109600><img src="http://cdn.akamai.steamstatic.com/steam/apps/109600/capsule_184x69.jpg" class="img-ss-list"> Neverwinter</a></td>
+<td class="treleasedate" data-order="2013-12-05">Dec 5, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="47">47% (78%/74%)</td><td data-order="4133856">4,133,856 <font class="small">&plusmn;52,286</font></td><td class="tplaytime" data-order="1511">25:11 (04:45)</td></tr>
+<tr>
+<td>24</td>
+<td data-order="Cloud Chamber"><a href=/app/290710><img src="http://cdn.akamai.steamstatic.com/steam/apps/290710/capsule_184x69.jpg" class="img-ss-list"> Cloud Chamber</a></td>
+<td class="treleasedate" data-order="2014-08-07">Aug 7, 2014</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="23">23% (63%/74%)</td><td data-order="22969">22,969 <font class="small">&plusmn;3,921</font></td><td class="tplaytime" data-order="225">03:45 (02:33)</td></tr>
+<tr>
+<td>25</td>
+<td data-order="The Secret World"><a href=/app/215280><img src="http://cdn.akamai.steamstatic.com/steam/apps/215280/capsule_184x69.jpg" class="img-ss-list"> The Secret World</a></td>
+<td class="treleasedate" data-order="2012-08-08">Aug 8, 2012</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="64">64% (85%/74%)</td><td data-order="321037">321,037 <font class="small">&plusmn;14,655</font></td><td class="tplaytime" data-order="2688">44:48 (13:18)</td></tr>
+<tr>
+<td>26</td>
+<td data-order="Age of Wushu"><a href=/app/265650><img src="http://cdn.akamai.steamstatic.com/steam/apps/265650/capsule_184x69.jpg" class="img-ss-list"> Age of Wushu</a></td>
+<td class="treleasedate" data-order="2014-03-27">Mar 27, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="20">20% (61%/74%)</td><td data-order="47165">47,165 <font class="small">&plusmn;5,619</font></td><td class="tplaytime" data-order="163">02:43 (00:01)</td></tr>
+<tr>
+<td>27</td>
+<td data-order="Champions Online: Free For All"><a href=/app/9880><img src="http://cdn.akamai.steamstatic.com/steam/apps/9880/capsule_184x69.jpg" class="img-ss-list"> Champions Online: Free For All</a></td>
+<td class="treleasedate" data-order="2011-06-14">Jun 14, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="43">43% (76%/72%)</td><td data-order="718345">718,345 <font class="small">&plusmn;21,909</font></td><td class="tplaytime" data-order="1783">29:43 (02:27)</td></tr>
+<tr>
+<td>28</td>
+<td data-order="Block N Load Beta"><a href=/app/299360><img src="http://cdn.akamai.steamstatic.com/steam/apps/299360/capsule_184x69.jpg" class="img-ss-list"> Block N Load Beta</a></td>
+<td class="treleasedate" data-order="2015-04-30">Apr 30, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="43">43% (76%/72%)</td><td data-order="1786130">1,786,130 <font class="small">&plusmn;34,492</font></td><td class="tplaytime" data-order="461">07:41 (01:09)</td></tr>
+<tr>
+<td>29</td>
+<td data-order="DC Universe Online"><a href=/app/24200><img src="http://cdn.akamai.steamstatic.com/steam/apps/24200/capsule_184x69.jpg" class="img-ss-list"> DC Universe Online</a></td>
+<td class="treleasedate" data-order="2011-11-02">Nov 2, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="56">56% (82%/72%)</td><td data-order="2268300">2,268,300 <font class="small">&plusmn;38,841</font></td><td class="tplaytime" data-order="1530">25:30 (05:44)</td></tr>
+<tr>
+<td>30</td>
+<td data-order="The Crew"><a href=/app/241560><img src="http://cdn.akamai.steamstatic.com/steam/apps/241560/capsule_184x69.jpg" class="img-ss-list"> The Crew</a></td>
+<td class="treleasedate" data-order="2014-12-01">Dec 1, 2014</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="28">28% (67%/71%)</td><td data-order="314024">314,024 <font class="small">&plusmn;14,495</font></td><td class="tplaytime" data-order="2501">41:41 (21:31)</td></tr>
+<tr>
+<td>31</td>
+<td data-order="Fallen Earth"><a href=/app/113420><img src="http://cdn.akamai.steamstatic.com/steam/apps/113420/capsule_184x69.jpg" class="img-ss-list"> Fallen Earth</a></td>
+<td class="treleasedate" data-order="2012-02-22">Feb 22, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="15">15% (56%/71%)</td><td data-order="1820496">1,820,496 <font class="small">&plusmn;34,821</font></td><td class="tplaytime" data-order="568">09:28 (00:43)</td></tr>
+<tr>
+<td>32</td>
+<td data-order="Global Agenda"><a href=/app/17020><img src="http://cdn.akamai.steamstatic.com/steam/apps/17020/capsule_184x69.jpg" class="img-ss-list"> Global Agenda</a></td>
+<td class="treleasedate" data-order="2011-06-14">Jun 14, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="45">45% (77%/70%)</td><td data-order="402568">402,568 <font class="small">&plusmn;16,409</font></td><td class="tplaytime" data-order="3637">60:37 (10:31)</td></tr>
+<tr>
+<td>33</td>
+<td data-order="Forsaken World "><a href=/app/36620><img src="http://cdn.akamai.steamstatic.com/steam/apps/36620/capsule_184x69.jpg" class="img-ss-list"> Forsaken World </a></td>
+<td class="treleasedate" data-order="2011-06-14">Jun 14, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="36">36% (72%/69%)</td><td data-order="367325">367,325 <font class="small">&plusmn;15,675</font></td><td class="tplaytime" data-order="6025">100:25 (01:29)</td></tr>
+<tr>
+<td>34</td>
+<td data-order="CrimeCraft GangWars"><a href=/app/38830><img src="http://cdn.akamai.steamstatic.com/steam/apps/38830/capsule_184x69.jpg" class="img-ss-list"> CrimeCraft GangWars</a></td>
+<td class="treleasedate" data-order="2011-08-22">Aug 22, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="10">10% (49%/68%)</td><td data-order="735878">735,878 <font class="small">&plusmn;22,175</font></td><td class="tplaytime" data-order="436">07:16 (00:07)</td></tr>
+<tr>
+<td>35</td>
+<td data-order="Prime World"><a href=/app/235340><img src="http://cdn.akamai.steamstatic.com/steam/apps/235340/capsule_184x69.jpg" class="img-ss-list"> Prime World</a></td>
+<td class="treleasedate" data-order="2014-03-31">Mar 31, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="22">22% (62%/65%)</td><td data-order="526529">526,529 <font class="small">&plusmn;18,763</font></td><td class="tplaytime" data-order="1961">32:41 (01:25)</td></tr>
+<tr>
+<td>36</td>
+<td data-order="Dragon Saga"><a href=/app/381990><img src="http://cdn.akamai.steamstatic.com/steam/apps/381990/capsule_184x69.jpg" class="img-ss-list"> Dragon Saga</a></td>
+<td class="treleasedate" data-order="2015-12-22">Dec 22, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="31">31% (69%/65%)</td><td data-order="233370">233,370 <font class="small">&plusmn;12,497</font></td><td class="tplaytime" data-order="353">05:53 (00:13)</td></tr>
+<tr>
+<td>37</td>
+<td data-order="Ryzom"><a href=/app/373720><img src="http://cdn.akamai.steamstatic.com/steam/apps/373720/capsule_184x69.jpg" class="img-ss-list"> Ryzom</a></td>
+<td class="treleasedate" data-order="2016-05-06">May 6, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="16">16% (57%/64%)</td><td data-order="95031">95,031 <font class="small">&plusmn;7,976</font></td><td class="tplaytime" data-order="203">03:23 (00:19)</td></tr>
+<tr>
+<td>38</td>
+<td data-order="Defiance"><a href=/app/224600><img src="http://cdn.akamai.steamstatic.com/steam/apps/224600/capsule_184x69.jpg" class="img-ss-list"> Defiance</a></td>
+<td class="treleasedate" data-order="2014-06-04">Jun 4, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="47">47% (78%/64%)</td><td data-order="3182142">3,182,142 <font class="small">&plusmn;45,941</font></td><td class="tplaytime" data-order="999">16:39 (02:38)</td></tr>
+<tr>
+<td>39</td>
+<td data-order="Spiral Knights"><a href=/app/99900><img src="http://cdn.akamai.steamstatic.com/steam/apps/99900/capsule_184x69.jpg" class="img-ss-list"> Spiral Knights</a></td>
+<td class="treleasedate" data-order="2011-06-14">Jun 14, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="61">61% (84%/64%)</td><td data-order="2497462">2,497,462 <font class="small">&plusmn;40,742</font></td><td class="tplaytime" data-order="1315">21:55 (01:38)</td></tr>
+<tr>
+<td>40</td>
+<td data-order="Dragon's Prophet (EU)"><a href=/app/259020><img src="http://cdn.akamai.steamstatic.com/steam/apps/259020/capsule_184x69.jpg" class="img-ss-list"> Dragon's Prophet (EU)</a></td>
+<td class="treleasedate" data-order="2013-09-18">Sep 18, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="38">38% (73%/63%)</td><td data-order="216363">216,363 <font class="small">&plusmn;12,033</font></td><td class="tplaytime" data-order="946">15:46 (01:52)</td></tr>
+<tr>
+<td>41</td>
+<td data-order="Dragon's Prophet"><a href=/app/229100><img src="http://cdn.akamai.steamstatic.com/steam/apps/229100/capsule_184x69.jpg" class="img-ss-list"> Dragon's Prophet</a></td>
+<td class="treleasedate" data-order="2013-09-23">Sep 23, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="24">24% (64%/63%)</td><td data-order="134306">134,306 <font class="small">&plusmn;9,482</font></td><td class="tplaytime" data-order="1091">18:11 (02:47)</td></tr>
+<tr>
+<td>42</td>
+<td data-order="Devilian"><a href=/app/407510><img src="http://cdn.akamai.steamstatic.com/steam/apps/407510/capsule_184x69.jpg" class="img-ss-list"> Devilian</a></td>
+<td class="treleasedate" data-order="2015-12-10">Dec 10, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="18">18% (59%/63%)</td><td data-order="366799">366,799 <font class="small">&plusmn;15,664</font></td><td class="tplaytime" data-order="895">14:55 (03:15)</td></tr>
+<tr>
+<td>43</td>
+<td data-order="Spellweaver"><a href=/app/429680><img src="http://cdn.akamai.steamstatic.com/steam/apps/429680/capsule_184x69.jpg" class="img-ss-list"> Spellweaver</a></td>
+<td class="treleasedate" data-order="2016-02-01">Feb 1, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="41">41% (75%/63%)</td><td data-order="158678">158,678 <font class="small">&plusmn;10,306</font></td><td class="tplaytime" data-order="516">08:36 (00:42)</td></tr>
+<tr>
+<td>44</td>
+<td data-order="SAGA"><a href=/app/376140><img src="http://cdn.akamai.steamstatic.com/steam/apps/376140/capsule_184x69.jpg" class="img-ss-list"> SAGA</a></td>
+<td class="treleasedate" data-order="2015-08-04">Aug 4, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="9">9% (47%/61%)</td><td data-order="81004">81,004 <font class="small">&plusmn;7,364</font></td><td class="tplaytime" data-order="58">00:58 (00:13)</td></tr>
+<tr>
+<td>45</td>
+<td data-order="Firefall"><a href=/app/227700><img src="http://cdn.akamai.steamstatic.com/steam/apps/227700/capsule_184x69.jpg" class="img-ss-list"> Firefall</a></td>
+<td class="treleasedate" data-order="2014-07-29">Jul 29, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="28">28% (67%/60%)</td><td data-order="2840591">2,840,591 <font class="small">&plusmn;43,428</font></td><td class="tplaytime" data-order="776">12:56 (01:26)</td></tr>
+<tr>
+<td>46</td>
+<td data-order="The Castle Doctrine"><a href=/app/249570><img src="http://cdn.akamai.steamstatic.com/steam/apps/249570/capsule_184x69.jpg" class="img-ss-list"> The Castle Doctrine</a></td>
+<td class="treleasedate" data-order="2014-01-29">Jan 29, 2014</td>
+<td class="tprice" data-order="1599">$15.99</td><td class="tuserscore" data-order="10">10% (49%/58%)</td><td data-order="15429">15,429 <font class="small">&plusmn;3,214</font></td><td class="tplaytime" data-order="890">14:50 (00:59)</td></tr>
+<tr>
+<td>47</td>
+<td data-order="Shattered Skies"><a href=/app/447500><img src="http://cdn.akamai.steamstatic.com/steam/apps/447500/capsule_184x69.jpg" class="img-ss-list"> Shattered Skies</a></td>
+<td class="treleasedate" data-order="2016-07-21">Jul 21, 2016</td>
+<td class="tprice" data-order="2499">$24.99</td><td class="tuserscore" data-order="0">N/A (N/A/57%)</td><td data-order="38223">38,223 <font class="small">&plusmn;5,059</font></td><td class="tplaytime" data-order="1394">23:14 (05:01)</td></tr>
+<tr>
+<td>48</td>
+<td data-order="Nether"><a href=/app/247730><img src="http://cdn.akamai.steamstatic.com/steam/apps/247730/capsule_184x69.jpg" class="img-ss-list"> Nether</a></td>
+<td class="treleasedate" data-order="2014-06-05">Jun 5, 2014</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="9">9% (46%/57%)</td><td data-order="664166">664,166 <font class="small">&plusmn;21,069</font></td><td class="tplaytime" data-order="677">11:17 (03:18)</td></tr>
+<tr>
+<td>49</td>
+<td data-order="Galaxy Control: 3D Strategy"><a href=/app/435440><img src="http://cdn.akamai.steamstatic.com/steam/apps/435440/capsule_184x69.jpg" class="img-ss-list"> Galaxy Control: 3D Strategy</a></td>
+<td class="treleasedate" data-order="2016-08-10">Aug 10, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="6">6% (40%)</td><td data-order="81706">81,706 <font class="small">&plusmn;7,396</font></td><td class="tplaytime" data-order="247">04:07 (00:27)</td></tr>
+<tr>
+<td>50</td>
+<td data-order="BattleStick"><a href=/app/394380><img src="http://cdn.akamai.steamstatic.com/steam/apps/394380/capsule_184x69.jpg" class="img-ss-list"> BattleStick</a></td>
+<td class="treleasedate" data-order="2016-05-06">May 6, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="5">5% (39%)</td><td data-order="192517">192,517 <font class="small">&plusmn;11,351</font></td><td class="tplaytime" data-order="36">00:36 (00:11)</td></tr>
+<tr>
+<td>51</td>
+<td data-order="H1Z1: King of the Kill Test Server"><a href=/app/439700><img src="http://cdn.akamai.steamstatic.com/steam/apps/439700/capsule_184x69.jpg" class="img-ss-list"> H1Z1: King of the Kill Test Server</a></td>
+<td class="treleasedate" data-order="2016-02-24">Feb 24, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="23">23% (63%)</td><td data-order="2693836">2,693,836 <font class="small">&plusmn;42,301</font></td><td class="tplaytime" data-order="112">01:52 (00:14)</td></tr>
+<tr>
+<td>52</td>
+<td data-order="Lost World Zero"><a href=/app/429020><img src="http://cdn.akamai.steamstatic.com/steam/apps/429020/capsule_184x69.jpg" class="img-ss-list"> Lost World Zero</a></td>
+<td class="treleasedate" data-order="2016-02-12">Feb 12, 2016</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="7">7% (44%)</td><td data-order="9819">9,819 <font class="small">&plusmn;2,564</font></td><td class="tplaytime" data-order="163">02:43 (03:03)</td></tr>
+<tr>
+<td>53</td>
+<td data-order="World of Soccer online"><a href=/app/393410><img src="http://cdn.akamai.steamstatic.com/steam/apps/393410/capsule_184x69.jpg" class="img-ss-list"> World of Soccer online</a></td>
+<td class="treleasedate" data-order="2015-08-26">Aug 26, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="23">23% (63%)</td><td data-order="302802">302,802 <font class="small">&plusmn;14,234</font></td><td class="tplaytime" data-order="141">02:21 (00:14)</td></tr>
+<tr>
+<td>54</td>
+<td data-order="Blitzkrieg 3"><a href=/app/235380><img src="http://cdn.akamai.steamstatic.com/steam/apps/235380/capsule_184x69.jpg" class="img-ss-list"> Blitzkrieg 3</a></td>
+<td class="treleasedate" data-order="2015-05-06">May 6, 2015</td>
+<td class="tprice" data-order="2699">$26.99</td><td class="tuserscore" data-order="26">26% (66%)</td><td data-order="36645">36,645 <font class="small">&plusmn;4,953</font></td><td class="tplaytime" data-order="1638">27:18 (07:03)</td></tr>
+<tr>
+<td>55</td>
+<td data-order="Asteroids: Outpost"><a href=/app/330210><img src="http://cdn.akamai.steamstatic.com/steam/apps/330210/capsule_184x69.jpg" class="img-ss-list"> Asteroids: Outpost</a></td>
+<td class="treleasedate" data-order="2015-03-26">Mar 26, 2015</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="3">3% (31%)</td><td data-order="2630">2,630 <font class="small">&plusmn;1,327</font></td><td class="tplaytime" data-order="49">00:49 (01:01)</td></tr>
+<tr>
+<td>56</td>
+<td data-order="Amazing World"><a href=/app/293500><img src="http://cdn.akamai.steamstatic.com/steam/apps/293500/capsule_184x69.jpg" class="img-ss-list"> Amazing World</a></td>
+<td class="treleasedate" data-order="2014-08-07">Aug 7, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="43">43% (76%)</td><td data-order="550900">550,900 <font class="small">&plusmn;19,192</font></td><td class="tplaytime" data-order="151">02:31 (00:26)</td></tr>
+<tr>
+<td>57</td>
+<td data-order="Lineage II"><a href=/app/373700><img src="http://cdn.akamai.steamstatic.com/steam/apps/373700/capsule_184x69.jpg" class="img-ss-list"> Lineage II</a></td>
+<td class="treleasedate" data-order="2015-11-12">Nov 12, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="11">11% (50%)</td><td data-order="83108">83,108 <font class="small">&plusmn;7,459</font></td><td class="tplaytime" data-order="1430">23:50 (00:59)</td></tr>
+<tr>
+<td>58</td>
+<td data-order="Audition Online"><a href=/app/349720><img src="http://cdn.akamai.steamstatic.com/steam/apps/349720/capsule_184x69.jpg" class="img-ss-list"> Audition Online</a></td>
+<td class="treleasedate" data-order="2015-06-03">Jun 3, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="24">24% (64%)</td><td data-order="341551">341,551 <font class="small">&plusmn;15,116</font></td><td class="tplaytime" data-order="414">06:54 (00:21)</td></tr>
+<tr>
+<td>59</td>
+<td data-order="Ancients of Fasaria: Celestias Angelica MMORPG"><a href=/app/339860><img src="http://cdn.akamai.steamstatic.com/steam/apps/339860/capsule_184x69.jpg" class="img-ss-list"> Ancients of Fasaria: Celestias Angelica MMORPG</a></td>
+<td class="treleasedate" data-order="2015-02-27">Feb 27, 2015</td>
+<td class="tprice" data-order="399">$3.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="14027">14,027 <font class="small">&plusmn;3,064</font></td><td class="tplaytime" data-order="295">04:55 (04:38)</td></tr>
+<tr>
+<td>60</td>
+<td data-order="The Four Kings Casino and Slots"><a href=/app/260430><img src="http://cdn.akamai.steamstatic.com/steam/apps/260430/capsule_184x69.jpg" class="img-ss-list"> The Four Kings Casino and Slots</a></td>
+<td class="treleasedate" data-order="2015-06-01">Jun 1, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="34">34% (71%)</td><td data-order="309991">309,991 <font class="small">&plusmn;14,401</font></td><td class="tplaytime" data-order="299">04:59 (00:37)</td></tr>
+<tr>
+<td>61</td>
+<td data-order="Age of Conan: Unchained - US version"><a href=/app/218170><img src="http://cdn.akamai.steamstatic.com/steam/apps/218170/capsule_184x69.jpg" class="img-ss-list"> Age of Conan: Unchained - US version</a></td>
+<td class="treleasedate" data-order="2013-02-22">Feb 22, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="36">36% (72%)</td><td data-order="180945">180,945 <font class="small">&plusmn;11,005</font></td><td class="tplaytime" data-order="1094">18:14 (02:36)</td></tr>
+<tr>
+<td>62</td>
+<td data-order="Big Bang Empire"><a href=/app/510660><img src="http://cdn.akamai.steamstatic.com/steam/apps/510660/capsule_184x69.jpg" class="img-ss-list"> Big Bang Empire</a></td>
+<td class="treleasedate" data-order="2016-08-23">Aug 23, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="32086">32,086 <font class="small">&plusmn;4,635</font></td><td class="tplaytime" data-order="289">04:49 (00:24)</td></tr>
+<tr>
+<td>63</td>
+<td data-order="UFO Online: Invasion"><a href=/app/442810><img src="http://cdn.akamai.steamstatic.com/steam/apps/442810/capsule_184x69.jpg" class="img-ss-list"> UFO Online: Invasion</a></td>
+<td class="treleasedate" data-order="2016-06-08">Jun 8, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="12">12% (51%)</td><td data-order="127994">127,994 <font class="small">&plusmn;9,256</font></td><td class="tplaytime" data-order="181">03:01 (00:15)</td></tr>
+<tr>
+<td>64</td>
+<td data-order="Khan: Absolute Power"><a href=/app/451130><img src="http://cdn.akamai.steamstatic.com/steam/apps/451130/capsule_184x69.jpg" class="img-ss-list"> Khan: Absolute Power</a></td>
+<td class="treleasedate" data-order="2016-03-18">Mar 18, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="9">9% (47%)</td><td data-order="58912">58,912 <font class="small">&plusmn;6,280</font></td><td class="tplaytime" data-order="1373">22:53 (00:10)</td></tr>
+<tr>
+<td>65</td>
+<td data-order="Pixel Survival - Craft Game"><a href=/app/434380><img src="http://cdn.akamai.steamstatic.com/steam/apps/434380/capsule_184x69.jpg" class="img-ss-list"> Pixel Survival - Craft Game</a></td>
+<td class="treleasedate" data-order="2016-01-14">Jan 14, 2016</td>
+<td class="tprice" data-order="99">$0.99</td><td class="tuserscore" data-order="7">7% (42%)</td><td data-order="8591">8,591 <font class="small">&plusmn;2,398</font></td><td class="tplaytime" data-order="30">00:30 (00:21)</td></tr>
+<tr>
+<td>66</td>
+<td data-order="MicroVolts Surge"><a href=/app/109400><img src="http://cdn.akamai.steamstatic.com/steam/apps/109400/capsule_184x69.jpg" class="img-ss-list"> MicroVolts Surge</a></td>
+<td class="treleasedate" data-order="2012-07-05">Jul 5, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="34">34% (71%)</td><td data-order="746573">746,573 <font class="small">&plusmn;22,335</font></td><td class="tplaytime" data-order="432">07:12 (01:03)</td></tr>
+<tr>
+<td>67</td>
+<td data-order="LOKA - League of keepers Allysium"><a href=/app/488720><img src="http://cdn.akamai.steamstatic.com/steam/apps/488720/capsule_184x69.jpg" class="img-ss-list"> LOKA - League of keepers Allysium</a></td>
+<td class="treleasedate" data-order="2016-08-02">Aug 2, 2016</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="514">514 <font class="small">&plusmn;1,005</font></td><td class="tplaytime" data-order="74">01:14 (01:14)</td></tr>
+<tr>
+<td>68</td>
+<td data-order="Islet Online"><a href=/app/428180><img src="http://cdn.akamai.steamstatic.com/steam/apps/428180/capsule_184x69.jpg" class="img-ss-list"> Islet Online</a></td>
+<td class="treleasedate" data-order="2016-02-01">Feb 1, 2016</td>
+<td class="tprice" data-order="2499">$24.99</td><td class="tuserscore" data-order="59">59% (83%)</td><td data-order="5085">5,085 <font class="small">&plusmn;1,845</font></td><td class="tplaytime" data-order="964">16:04 (03:52)</td></tr>
+<tr>
+<td>69</td>
+<td data-order="Manyland"><a href=/app/342280><img src="http://cdn.akamai.steamstatic.com/steam/apps/342280/capsule_184x69.jpg" class="img-ss-list"> Manyland</a></td>
+<td class="treleasedate" data-order="2015-12-07">Dec 7, 2015</td>
+<td class="tprice" data-order="899">$8.99</td><td class="tuserscore" data-order="64">64% (85%)</td><td data-order="8065">8,065 <font class="small">&plusmn;2,324</font></td><td class="tplaytime" data-order="1871">31:11 (06:23)</td></tr>
+<tr>
+<td>70</td>
+<td data-order="Ancients of Fasaria: Chess Club"><a href=/app/385020><img src="http://cdn.akamai.steamstatic.com/steam/apps/385020/capsule_184x69.jpg" class="img-ss-list"> Ancients of Fasaria: Chess Club</a></td>
+<td class="treleasedate" data-order="2015-11-04">Nov 4, 2015</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="13325">13,325 <font class="small">&plusmn;2,987</font></td><td class="tplaytime" data-order="193">03:13 (03:15)</td></tr>
+<tr>
+<td>71</td>
+<td data-order="Minimon"><a href=/app/308520><img src="http://cdn.akamai.steamstatic.com/steam/apps/308520/capsule_184x69.jpg" class="img-ss-list"> Minimon</a></td>
+<td class="treleasedate" data-order="2015-03-25">Mar 25, 2015</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="20">20% (61%)</td><td data-order="9468">9,468 <font class="small">&plusmn;2,518</font></td><td class="tplaytime" data-order="287">04:47 (05:11)</td></tr>
+<tr>
+<td>72</td>
+<td data-order="BattleSpace"><a href=/app/306930><img src="http://cdn.akamai.steamstatic.com/steam/apps/306930/capsule_184x69.jpg" class="img-ss-list"> BattleSpace</a></td>
+<td class="treleasedate" data-order="2015-01-07">Jan 7, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="3">3% (30%)</td><td data-order="113091">113,091 <font class="small">&plusmn;8,701</font></td><td class="tplaytime" data-order="37">00:37 (00:01)</td></tr>
+<tr>
+<td>73</td>
+<td data-order="Line of Defense MMO"><a href=/app/266620><img src="http://cdn.akamai.steamstatic.com/steam/apps/266620/capsule_184x69.jpg" class="img-ss-list"> Line of Defense MMO</a></td>
+<td class="treleasedate" data-order="2014-09-16">Sep 16, 2014</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="0">0% (15%)</td><td data-order="1578">1,578 <font class="small">&plusmn;1,028</font></td><td class="tplaytime" data-order="9598">159:58 (02:42)</td></tr>
+<tr>
+<td>74</td>
+<td data-order="Prominence Poker"><a href=/app/384180><img src="http://cdn.akamai.steamstatic.com/steam/apps/384180/capsule_184x69.jpg" class="img-ss-list"> Prominence Poker</a></td>
+<td class="treleasedate" data-order="2016-05-18">May 18, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="38">38% (73%)</td><td data-order="149911">149,911 <font class="small">&plusmn;10,017</font></td><td class="tplaytime" data-order="198">03:18 (00:53)</td></tr>
+<tr>
+<td>75</td>
+<td data-order="Elite Dangerous: Arena"><a href=/app/443080><img src="http://cdn.akamai.steamstatic.com/steam/apps/443080/capsule_184x69.jpg" class="img-ss-list"> Elite Dangerous: Arena</a></td>
+<td class="treleasedate" data-order="2016-02-16">Feb 16, 2016</td>
+<td class="tprice" data-order="749">$7.49</td><td class="tuserscore" data-order="9">9% (47%)</td><td data-order="278431">278,431 <font class="small">&plusmn;13,649</font></td><td class="tplaytime" data-order="106">01:46 (00:33)</td></tr>
+<tr>
+<td>76</td>
+<td data-order="MechWarrior Online"><a href=/app/342200><img src="http://cdn.akamai.steamstatic.com/steam/apps/342200/capsule_184x69.jpg" class="img-ss-list"> MechWarrior Online</a></td>
+<td class="treleasedate" data-order="2015-12-10">Dec 10, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="47">47% (78%)</td><td data-order="819162">819,162 <font class="small">&plusmn;23,393</font></td><td class="tplaytime" data-order="1001">16:41 (00:47)</td></tr>
+<tr>
+<td>77</td>
+<td data-order="ABD: A Beautiful Day"><a href=/app/384920><img src="http://cdn.akamai.steamstatic.com/steam/apps/384920/capsule_184x69.jpg" class="img-ss-list"> ABD: A Beautiful Day</a></td>
+<td class="treleasedate" data-order="2015-08-14">Aug 14, 2015</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="514">514 <font class="small">&plusmn;1,005</font></td><td class="tplaytime" data-order="0">00:00 (00:00)</td></tr>
+<tr>
+<td>78</td>
+<td data-order="Out of Reach"><a href=/app/327090><img src="http://cdn.akamai.steamstatic.com/steam/apps/327090/capsule_184x69.jpg" class="img-ss-list"> Out of Reach</a></td>
+<td class="treleasedate" data-order="2015-06-08">Jun 8, 2015</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="31">31% (69%)</td><td data-order="49444">49,444 <font class="small">&plusmn;5,754</font></td><td class="tplaytime" data-order="797">13:17 (03:17)</td></tr>
+<tr>
+<td>79</td>
+<td data-order="Oort Online"><a href=/app/324510><img src="http://cdn.akamai.steamstatic.com/steam/apps/324510/capsule_184x69.jpg" class="img-ss-list"> Oort Online</a></td>
+<td class="treleasedate" data-order="2014-11-13">Nov 13, 2014</td>
+<td class="tprice" data-order="3499">$34.99</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="11923">11,923 <font class="small">&plusmn;2,825</font></td><td class="tplaytime" data-order="317">05:17 (01:44)</td></tr>
+<tr>
+<td>80</td>
+<td data-order="Requiem"><a href=/app/289780><img src="http://cdn.akamai.steamstatic.com/steam/apps/289780/capsule_184x69.jpg" class="img-ss-list"> Requiem</a></td>
+<td class="treleasedate" data-order="2015-03-04">Mar 4, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="18">18% (59%)</td><td data-order="220395">220,395 <font class="small">&plusmn;12,145</font></td><td class="tplaytime" data-order="270">04:30 (00:22)</td></tr>
+<tr>
+<td>81</td>
+<td data-order="Kings Bounty: Legions"><a href=/app/235400><img src="http://cdn.akamai.steamstatic.com/steam/apps/235400/capsule_184x69.jpg" class="img-ss-list"> Kings Bounty: Legions</a></td>
+<td class="treleasedate" data-order="2013-12-10">Dec 10, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="12">12% (51%)</td><td data-order="208998">208,998 <font class="small">&plusmn;11,827</font></td><td class="tplaytime" data-order="1202">20:02 (00:45)</td></tr>
+<tr>
+<td>82</td>
+<td data-order="Legends of Azulgar"><a href=/app/503010><img src="http://cdn.akamai.steamstatic.com/steam/apps/503010/capsule_184x69.jpg" class="img-ss-list"> Legends of Azulgar</a></td>
+<td class="treleasedate" data-order="2016-08-18">Aug 18, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="5260">5,260 <font class="small">&plusmn;1,876</font></td><td class="tplaytime" data-order="6">00:06 (00:07)</td></tr>
+<tr>
+<td>83</td>
+<td data-order="Riding Out"><a href=/app/461210><img src="http://cdn.akamai.steamstatic.com/steam/apps/461210/capsule_184x69.jpg" class="img-ss-list"> Riding Out</a></td>
+<td class="treleasedate" data-order="2016-05-25">May 25, 2016</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="2131">2,131 <font class="small">&plusmn;1,474</font></td><td class="tplaytime" data-order="62">01:02 (01:34)</td></tr>
+<tr>
+<td>84</td>
+<td data-order="World of Fishing"><a href=/app/421960><img src="http://cdn.akamai.steamstatic.com/steam/apps/421960/capsule_184x69.jpg" class="img-ss-list"> World of Fishing</a></td>
+<td class="treleasedate" data-order="2016-09-06">Sep 6, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="9">9% (47%)</td><td data-order="33840">33,840 <font class="small">&plusmn;4,760</font></td><td class="tplaytime" data-order="69">01:09 (00:22)</td></tr>
+<tr>
+<td>85</td>
+<td data-order="Paradise Island - VR MMO"><a href=/app/400250><img src="http://cdn.akamai.steamstatic.com/steam/apps/400250/capsule_184x69.jpg" class="img-ss-list"> Paradise Island - VR MMO</a></td>
+<td class="treleasedate" data-order="2015-12-23">Dec 23, 2015</td>
+<td class="tprice" data-order="99">$0.99</td><td class="tuserscore" data-order="15">15% (56%)</td><td data-order="264579">264,579 <font class="small">&plusmn;13,306</font></td><td class="tplaytime" data-order="430">07:10 (05:50)</td></tr>
+<tr>
+<td>86</td>
+<td data-order="Astro Lords"><a href=/app/385530><img src="http://cdn.akamai.steamstatic.com/steam/apps/385530/capsule_184x69.jpg" class="img-ss-list"> Astro Lords</a></td>
+<td class="treleasedate" data-order="2015-09-29">Sep 29, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="59263">59,263 <font class="small">&plusmn;6,299</font></td><td class="tplaytime" data-order="263">04:23 (00:09)</td></tr>
+<tr>
+<td>87</td>
+<td data-order="Uncrowded"><a href=/app/370100><img src="http://cdn.akamai.steamstatic.com/steam/apps/370100/capsule_184x69.jpg" class="img-ss-list"> Uncrowded</a></td>
+<td class="treleasedate" data-order="2015-05-11">May 11, 2015</td>
+<td class="tprice" data-order="99">$0.99</td><td class="tuserscore" data-order="2">2% (27%)</td><td data-order="253358">253,358 <font class="small">&plusmn;13,021</font></td><td class="tplaytime" data-order="145">02:25 (02:19)</td></tr>
+<tr>
+<td>88</td>
+<td data-order="Angels of Fasaria RPG + MMORPG"><a href=/app/335900><img src="http://cdn.akamai.steamstatic.com/steam/apps/335900/capsule_184x69.jpg" class="img-ss-list"> Angels of Fasaria RPG + MMORPG</a></td>
+<td class="treleasedate" data-order="2014-12-09">Dec 9, 2014</td>
+<td class="tprice" data-order="1299">$12.99</td><td class="tuserscore" data-order="22">22% (62%)</td><td data-order="25774">25,774 <font class="small">&plusmn;4,154</font></td><td class="tplaytime" data-order="238">03:58 (04:17)</td></tr>
+<tr>
+<td>89</td>
+<td data-order="Darkwind: War on Wheels"><a href=/app/295710><img src="http://cdn.akamai.steamstatic.com/steam/apps/295710/capsule_184x69.jpg" class="img-ss-list"> Darkwind: War on Wheels</a></td>
+<td class="treleasedate" data-order="2014-08-22">Aug 22, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="6">6% (41%)</td><td data-order="201284">201,284 <font class="small">&plusmn;11,606</font></td><td class="tplaytime" data-order="126">02:06 (00:06)</td></tr>
+<tr>
+<td>90</td>
+<td data-order="ROSE Online"><a href=/app/215120><img src="http://cdn.akamai.steamstatic.com/steam/apps/215120/capsule_184x69.jpg" class="img-ss-list"> ROSE Online</a></td>
+<td class="treleasedate" data-order="2012-10-23">Oct 23, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="31">31% (69%)</td><td data-order="413088">413,088 <font class="small">&plusmn;16,622</font></td><td class="tplaytime" data-order="674">11:14 (00:39)</td></tr>
+<tr>
+<td>91</td>
+<td data-order="90 Minute Fever"><a href=/app/468070><img src="http://cdn.akamai.steamstatic.com/steam/apps/468070/capsule_184x69.jpg" class="img-ss-list"> 90 Minute Fever</a></td>
+<td class="treleasedate" data-order="2016-07-12">Jul 12, 2016</td>
+<td class="tprice" data-order="599">$5.99</td><td class="tuserscore" data-order="49">49% (79%)</td><td data-order="533">533 <font class="small">&plusmn;737</font></td><td class="tplaytime" data-order="5896">98:16 (98:16)</td></tr>
+<tr>
+<td>92</td>
+<td data-order="Tree of Savior (English Ver.)"><a href=/app/372000><img src="http://cdn.akamai.steamstatic.com/steam/apps/372000/capsule_184x69.jpg" class="img-ss-list"> Tree of Savior (English Ver.)</a></td>
+<td class="treleasedate" data-order="2016-03-28">Mar 28, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="18">18% (59%)</td><td data-order="1458080">1,458,080 <font class="small">&plusmn;31,180</font></td><td class="tplaytime" data-order="3032">50:32 (05:53)</td></tr>
+<tr>
+<td>93</td>
+<td data-order="Tom Clancy's EndWar Online"><a href=/app/381810><img src="http://cdn.akamai.steamstatic.com/steam/apps/381810/capsule_184x69.jpg" class="img-ss-list"> Tom Clancy's EndWar Online</a></td>
+<td class="treleasedate" data-order="2016-01-25">Jan 25, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="4">4% (36%)</td><td data-order="250553">250,553 <font class="small">&plusmn;12,948</font></td><td class="tplaytime" data-order="127">02:07 (00:20)</td></tr>
+<tr>
+<td>94</td>
+<td data-order="Piercing Blow"><a href=/app/382850><img src="http://cdn.akamai.steamstatic.com/steam/apps/382850/capsule_184x69.jpg" class="img-ss-list"> Piercing Blow</a></td>
+<td class="treleasedate" data-order="2015-11-10">Nov 10, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="7">7% (44%)</td><td data-order="440966">440,966 <font class="small">&plusmn;17,173</font></td><td class="tplaytime" data-order="495">08:15 (00:34)</td></tr>
+<tr>
+<td>95</td>
+<td data-order="Nebula Online"><a href=/app/368750><img src="http://cdn.akamai.steamstatic.com/steam/apps/368750/capsule_184x69.jpg" class="img-ss-list"> Nebula Online</a></td>
+<td class="treleasedate" data-order="2016-01-05">Jan 5, 2016</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="7">7% (42%)</td><td data-order="80478">80,478 <font class="small">&plusmn;7,340</font></td><td class="tplaytime" data-order="323">05:23 (05:08)</td></tr>
+<tr>
+<td>96</td>
+<td data-order="16 Bit Arena"><a href=/app/347630><img src="http://cdn.akamai.steamstatic.com/steam/apps/347630/capsule_184x69.jpg" class="img-ss-list"> 16 Bit Arena</a></td>
+<td class="treleasedate" data-order="2015-03-24">Mar 24, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="108532">108,532 <font class="small">&plusmn;8,524</font></td><td class="tplaytime" data-order="50">00:50 (00:01)</td></tr>
+<tr>
+<td>97</td>
+<td data-order="Fiesta Online NA"><a href=/app/300970><img src="http://cdn.akamai.steamstatic.com/steam/apps/300970/capsule_184x69.jpg" class="img-ss-list"> Fiesta Online NA</a></td>
+<td class="treleasedate" data-order="2014-05-20">May 20, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="14">14% (54%)</td><td data-order="346636">346,636 <font class="small">&plusmn;15,228</font></td><td class="tplaytime" data-order="857">14:17 (01:02)</td></tr>
+<tr>
+<td>98</td>
+<td data-order="La Tale"><a href=/app/264360><img src="http://cdn.akamai.steamstatic.com/steam/apps/264360/capsule_184x69.jpg" class="img-ss-list"> La Tale</a></td>
+<td class="treleasedate" data-order="2014-06-17">Jun 17, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="22">22% (62%)</td><td data-order="712734">712,734 <font class="small">&plusmn;21,824</font></td><td class="tplaytime" data-order="286">04:46 (00:39)</td></tr>
+<tr>
+<td>99</td>
+<td data-order="DayZ"><a href=/app/221100><img src="http://cdn.akamai.steamstatic.com/steam/apps/221100/capsule_184x69.jpg" class="img-ss-list"> DayZ</a></td>
+<td class="treleasedate" data-order="2013-12-16">Dec 16, 2013</td>
+<td class="tprice" data-order="3499">$34.99</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="3432344">3,432,344 <font class="small">&plusmn;47,695</font></td><td class="tplaytime" data-order="4591">76:31 (20:34)</td></tr>
+<tr>
+<td>100</td>
+<td data-order="Zezenia Online"><a href=/app/497860><img src="http://cdn.akamai.steamstatic.com/steam/apps/497860/capsule_184x69.jpg" class="img-ss-list"> Zezenia Online</a></td>
+<td class="treleasedate" data-order="2016-07-07">Jul 7, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="41204">41,204 <font class="small">&plusmn;5,252</font></td><td class="tplaytime" data-order="163">02:43 (00:12)</td></tr>
+<tr>
+<td>101</td>
+<td data-order="SurrealVR"><a href=/app/461180><img src="http://cdn.akamai.steamstatic.com/steam/apps/461180/capsule_184x69.jpg" class="img-ss-list"> SurrealVR</a></td>
+<td class="treleasedate" data-order="2016-04-15">Apr 15, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="44184">44,184 <font class="small">&plusmn;5,439</font></td><td class="tplaytime" data-order="40">00:40 (00:07)</td></tr>
+<tr>
+<td>102</td>
+<td data-order="CABAL Online"><a href=/app/253490><img src="http://cdn.akamai.steamstatic.com/steam/apps/253490/capsule_184x69.jpg" class="img-ss-list"> CABAL Online</a></td>
+<td class="treleasedate" data-order="2016-02-17">Feb 17, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="18">18% (59%)</td><td data-order="169373">169,373 <font class="small">&plusmn;10,647</font></td><td class="tplaytime" data-order="778">12:58 (00:16)</td></tr>
+<tr>
+<td>103</td>
+<td data-order="Sphere III: Enchanted World"><a href=/app/397040><img src="http://cdn.akamai.steamstatic.com/steam/apps/397040/capsule_184x69.jpg" class="img-ss-list"> Sphere III: Enchanted World</a></td>
+<td class="treleasedate" data-order="2015-12-02">Dec 2, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="8">8% (45%)</td><td data-order="114318">114,318 <font class="small">&plusmn;8,748</font></td><td class="tplaytime" data-order="106">01:46 (00:27)</td></tr>
+<tr>
+<td>104</td>
+<td data-order="Karos Returns"><a href=/app/371310><img src="http://cdn.akamai.steamstatic.com/steam/apps/371310/capsule_184x69.jpg" class="img-ss-list"> Karos Returns</a></td>
+<td class="treleasedate" data-order="2015-07-30">Jul 30, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="38">38% (73%)</td><td data-order="124838">124,838 <font class="small">&plusmn;9,141</font></td><td class="tplaytime" data-order="529">08:49 (00:23)</td></tr>
+<tr>
+<td>105</td>
+<td data-order="Cubic Castles"><a href=/app/317470><img src="http://cdn.akamai.steamstatic.com/steam/apps/317470/capsule_184x69.jpg" class="img-ss-list"> Cubic Castles</a></td>
+<td class="treleasedate" data-order="2014-08-13">Aug 13, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="34">34% (71%)</td><td data-order="850196">850,196 <font class="small">&plusmn;23,831</font></td><td class="tplaytime" data-order="345">05:45 (00:36)</td></tr>
+<tr>
+<td>106</td>
+<td data-order="Voice Of Pripyat"><a href=/app/269530><img src="http://cdn.akamai.steamstatic.com/steam/apps/269530/capsule_184x69.jpg" class="img-ss-list"> Voice Of Pripyat</a></td>
+<td class="treleasedate" data-order="2014-11-19">Nov 19, 2014</td>
+<td class="tprice" data-order="699">$6.99</td><td class="tuserscore" data-order="7">7% (43%)</td><td data-order="6663">6,663 <font class="small">&plusmn;2,112</font></td><td class="tplaytime" data-order="163">02:43 (02:40)</td></tr>
+<tr>
+<td>107</td>
+<td data-order="Elemental Heroes"><a href=/app/432290><img src="http://cdn.akamai.steamstatic.com/steam/apps/432290/capsule_184x69.jpg" class="img-ss-list"> Elemental Heroes</a></td>
+<td class="treleasedate" data-order="2016-03-03">Mar 3, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="16">16% (57%)</td><td data-order="59964">59,964 <font class="small">&plusmn;6,336</font></td><td class="tplaytime" data-order="163">02:43 (00:25)</td></tr>
+<tr>
+<td>108</td>
+<td data-order="Heroes of Scene"><a href=/app/356130><img src="http://cdn.akamai.steamstatic.com/steam/apps/356130/capsule_184x69.jpg" class="img-ss-list"> Heroes of Scene</a></td>
+<td class="treleasedate" data-order="2015-08-26">Aug 26, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="12">12% (51%)</td><td data-order="233545">233,545 <font class="small">&plusmn;12,501</font></td><td class="tplaytime" data-order="65">01:05 (00:15)</td></tr>
+<tr>
+<td>109</td>
+<td data-order="Break_In"><a href=/app/357320><img src="http://cdn.akamai.steamstatic.com/steam/apps/357320/capsule_184x69.jpg" class="img-ss-list"> Break_In</a></td>
+<td class="treleasedate" data-order="2015-04-29">Apr 29, 2015</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="1066">1,066 <font class="small">&plusmn;1,042</font></td><td class="tplaytime" data-order="90">01:30 (02:13)</td></tr>
+<tr>
+<td>110</td>
+<td data-order="The Slaughtering Grounds"><a href=/app/329950><img src="http://cdn.akamai.steamstatic.com/steam/apps/329950/capsule_184x69.jpg" class="img-ss-list"> The Slaughtering Grounds</a></td>
+<td class="treleasedate" data-order="2014-10-31">Oct 31, 2014</td>
+<td class="tprice" data-order="99">$0.99</td><td class="tuserscore" data-order="4">4% (35%)</td><td data-order="208648">208,648 <font class="small">&plusmn;11,817</font></td><td class="tplaytime" data-order="203">03:23 (03:15)</td></tr>
+<tr>
+<td>111</td>
+<td data-order="Epic Space: Online"><a href=/app/293400><img src="http://cdn.akamai.steamstatic.com/steam/apps/293400/capsule_184x69.jpg" class="img-ss-list"> Epic Space: Online</a></td>
+<td class="treleasedate" data-order="2014-05-08">May 8, 2014</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="1">1% (23%)</td><td data-order="2279">2,279 <font class="small">&plusmn;1,235</font></td><td class="tplaytime" data-order="360">06:00 (01:21)</td></tr>
+<tr>
+<td>112</td>
+<td data-order="Panzar"><a href=/app/240320><img src="http://cdn.akamai.steamstatic.com/steam/apps/240320/capsule_184x69.jpg" class="img-ss-list"> Panzar</a></td>
+<td class="treleasedate" data-order="2013-11-25">Nov 25, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="24">24% (64%)</td><td data-order="1034998">1,034,998 <font class="small">&plusmn;26,286</font></td><td class="tplaytime" data-order="592">09:52 (01:32)</td></tr>
+<tr>
+<td>113</td>
+<td data-order="C9"><a href=/app/212390><img src="http://cdn.akamai.steamstatic.com/steam/apps/212390/capsule_184x69.jpg" class="img-ss-list"> C9</a></td>
+<td class="treleasedate" data-order="2012-09-13">Sep 13, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="41">41% (75%)</td><td data-order="549322">549,322 <font class="small">&plusmn;19,164</font></td><td class="tplaytime" data-order="643">10:43 (00:14)</td></tr>
+<tr>
+<td>114</td>
+<td data-order="Heroes of Shadow Guard"><a href=/app/438720><img src="http://cdn.akamai.steamstatic.com/steam/apps/438720/capsule_184x69.jpg" class="img-ss-list"> Heroes of Shadow Guard</a></td>
+<td class="treleasedate" data-order="2016-08-03">Aug 3, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="11046">11,046 <font class="small">&plusmn;2,719</font></td><td class="tplaytime" data-order="42">00:42 (00:39)</td></tr>
+<tr>
+<td>115</td>
+<td data-order="UFO Online"><a href=/app/298300><img src="http://cdn.akamai.steamstatic.com/steam/apps/298300/capsule_184x69.jpg" class="img-ss-list"> UFO Online</a></td>
+<td class="treleasedate" data-order="2014-10-10">Oct 10, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="1599">1,599 <font class="small">&plusmn;1,276</font></td><td class="tplaytime" data-order="232">03:52 (02:42)</td></tr>
+<tr>
+<td>116</td>
+<td data-order="Infinity Wars - Animated Trading Card Game"><a href=/app/257730><img src="http://cdn.akamai.steamstatic.com/steam/apps/257730/capsule_184x69.jpg" class="img-ss-list"> Infinity Wars - Animated Trading Card Game</a></td>
+<td class="treleasedate" data-order="2014-09-05">Sep 5, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="56">56% (82%)</td><td data-order="572992">572,992 <font class="small">&plusmn;19,572</font></td><td class="tplaytime" data-order="872">14:32 (01:23)</td></tr>
+<tr>
+<td>117</td>
+<td data-order="Age of Conan: Unchained - EU version"><a href=/app/217750><img src="http://cdn.akamai.steamstatic.com/steam/apps/217750/capsule_184x69.jpg" class="img-ss-list"> Age of Conan: Unchained - EU version</a></td>
+<td class="treleasedate" data-order="2013-02-22">Feb 22, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="36">36% (72%)</td><td data-order="402743">402,743 <font class="small">&plusmn;16,413</font></td><td class="tplaytime" data-order="958">15:58 (02:08)</td></tr>
+<tr>
+<td>118</td>
+<td data-order="Thanatos"><a href=/app/493440><img src="http://cdn.akamai.steamstatic.com/steam/apps/493440/capsule_184x69.jpg" class="img-ss-list"> Thanatos</a></td>
+<td class="treleasedate" data-order="2016-08-24">Aug 24, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="5">5% (39%)</td><td data-order="21391">21,391 <font class="small">&plusmn;3,784</font></td><td class="tplaytime" data-order="95">01:35 (00:31)</td></tr>
+<tr>
+<td>119</td>
+<td data-order="Dogfight Elite"><a href=/app/480500><img src="http://cdn.akamai.steamstatic.com/steam/apps/480500/capsule_184x69.jpg" class="img-ss-list"> Dogfight Elite</a></td>
+<td class="treleasedate" data-order="2016-06-11">Jun 11, 2016</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="514">514 <font class="small">&plusmn;1,005</font></td><td class="tplaytime" data-order="3">00:03 (00:03)</td></tr>
+<tr>
+<td>120</td>
+<td data-order="Techwars Online"><a href=/app/444180><img src="http://cdn.akamai.steamstatic.com/steam/apps/444180/capsule_184x69.jpg" class="img-ss-list"> Techwars Online</a></td>
+<td class="treleasedate" data-order="2016-03-17">Mar 17, 2016</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="10871">10,871 <font class="small">&plusmn;2,698</font></td><td class="tplaytime" data-order="210">03:30 (04:39)</td></tr>
+<tr>
+<td>121</td>
+<td data-order="Knight Online"><a href=/app/389430><img src="http://cdn.akamai.steamstatic.com/steam/apps/389430/capsule_184x69.jpg" class="img-ss-list"> Knight Online</a></td>
+<td class="treleasedate" data-order="2016-01-25">Jan 25, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="7">7% (44%)</td><td data-order="1201917">1,201,917 <font class="small">&plusmn;28,319</font></td><td class="tplaytime" data-order="3299">54:59 (01:09)</td></tr>
+<tr>
+<td>122</td>
+<td data-order="Aion"><a href=/app/373680><img src="http://cdn.akamai.steamstatic.com/steam/apps/373680/capsule_184x69.jpg" class="img-ss-list"> Aion</a></td>
+<td class="treleasedate" data-order="2015-10-29">Oct 29, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="38">38% (73%)</td><td data-order="187608">187,608 <font class="small">&plusmn;11,205</font></td><td class="tplaytime" data-order="1049">17:29 (01:20)</td></tr>
+<tr>
+<td>123</td>
+<td data-order="Trove"><a href=/app/304050><img src="http://cdn.akamai.steamstatic.com/steam/apps/304050/capsule_184x69.jpg" class="img-ss-list"> Trove</a></td>
+<td class="treleasedate" data-order="2015-07-09">Jul 9, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="47">47% (78%)</td><td data-order="6389707">6,389,707 <font class="small">&plusmn;64,780</font></td><td class="tplaytime" data-order="1158">19:18 (02:04)</td></tr>
+<tr>
+<td>124</td>
+<td data-order="FACTIONS: Origins of Malu"><a href=/app/339530><img src="http://cdn.akamai.steamstatic.com/steam/apps/339530/capsule_184x69.jpg" class="img-ss-list"> FACTIONS: Origins of Malu</a></td>
+<td class="treleasedate" data-order="2015-03-23">Mar 23, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="1599">1,599 <font class="small">&plusmn;1,276</font></td><td class="tplaytime" data-order="29">00:29 (00:47)</td></tr>
+<tr>
+<td>125</td>
+<td data-order="Hero Zero"><a href=/app/482920><img src="http://cdn.akamai.steamstatic.com/steam/apps/482920/capsule_184x69.jpg" class="img-ss-list"> Hero Zero</a></td>
+<td class="treleasedate" data-order="2016-07-05">Jul 5, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="36">36% (72%)</td><td data-order="210752">210,752 <font class="small">&plusmn;11,876</font></td><td class="tplaytime" data-order="654">10:54 (00:23)</td></tr>
+<tr>
+<td>126</td>
+<td data-order="Allods Online RU"><a href=/app/381640><img src="http://cdn.akamai.steamstatic.com/steam/apps/381640/capsule_184x69.jpg" class="img-ss-list"> Allods Online RU</a></td>
+<td class="treleasedate" data-order="2016-01-26">Jan 26, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="20">20% (61%)</td><td data-order="94505">94,505 <font class="small">&plusmn;7,954</font></td><td class="tplaytime" data-order="529">08:49 (00:06)</td></tr>
+<tr>
+<td>127</td>
+<td data-order="Might & Magic Heroes Online"><a href=/app/336520><img src="http://cdn.akamai.steamstatic.com/steam/apps/336520/capsule_184x69.jpg" class="img-ss-list"> Might & Magic Heroes Online</a></td>
+<td class="treleasedate" data-order="2015-11-24">Nov 24, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="5">5% (37%)</td><td data-order="210927">210,927 <font class="small">&plusmn;11,881</font></td><td class="tplaytime" data-order="356">05:56 (00:18)</td></tr>
+<tr>
+<td>128</td>
+<td data-order="Badland Bandits"><a href=/app/378480><img src="http://cdn.akamai.steamstatic.com/steam/apps/378480/capsule_184x69.jpg" class="img-ss-list"> Badland Bandits</a></td>
+<td class="treleasedate" data-order="2015-07-16">Jul 16, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="12">12% (51%)</td><td data-order="47516">47,516 <font class="small">&plusmn;5,640</font></td><td class="tplaytime" data-order="52">00:52 (00:11)</td></tr>
+<tr>
+<td>129</td>
+<td data-order="The Elder Scrolls Online: Tamriel Unlimited"><a href=/app/306130><img src="http://cdn.akamai.steamstatic.com/steam/apps/306130/capsule_184x69.jpg" class="img-ss-list"> The Elder Scrolls Online: Tamriel Unlimited</a></td>
+<td class="treleasedate" data-order="2015-03-17">Mar 17, 2015</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="43">43% (76%)</td><td data-order="631203">631,203 <font class="small">&plusmn;20,540</font></td><td class="tplaytime" data-order="3536">58:56 (14:56)</td></tr>
+<tr>
+<td>130</td>
+<td data-order="Puzzle Pirates"><a href=/app/99910><img src="http://cdn.akamai.steamstatic.com/steam/apps/99910/capsule_184x69.jpg" class="img-ss-list"> Puzzle Pirates</a></td>
+<td class="treleasedate" data-order="2011-08-31">Aug 31, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="52">52% (80%)</td><td data-order="352597">352,597 <font class="small">&plusmn;15,358</font></td><td class="tplaytime" data-order="980">16:20 (00:43)</td></tr>
+<tr>
+<td>131</td>
+<td data-order="Dropship Down"><a href=/app/501740><img src="http://cdn.akamai.steamstatic.com/steam/apps/501740/capsule_184x69.jpg" class="img-ss-list"> Dropship Down</a></td>
+<td class="treleasedate" data-order="2016-07-21">Jul 21, 2016</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="1227">1,227 <font class="small">&plusmn;906</font></td><td class="tplaytime" data-order="14">00:14 (00:14)</td></tr>
+<tr>
+<td>132</td>
+<td data-order="Hero Battle"><a href=/app/463000><img src="http://cdn.akamai.steamstatic.com/steam/apps/463000/capsule_184x69.jpg" class="img-ss-list"> Hero Battle</a></td>
+<td class="treleasedate" data-order="2016-04-28">Apr 28, 2016</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="45">45% (77%)</td><td data-order="8065">8,065 <font class="small">&plusmn;2,324</font></td><td class="tplaytime" data-order="183">03:03 (03:57)</td></tr>
+<tr>
+<td>133</td>
+<td data-order="Tactical Craft Online"><a href=/app/415860><img src="http://cdn.akamai.steamstatic.com/steam/apps/415860/capsule_184x69.jpg" class="img-ss-list"> Tactical Craft Online</a></td>
+<td class="treleasedate" data-order="2016-02-12">Feb 12, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="10">10% (48%)</td><td data-order="217765">217,765 <font class="small">&plusmn;12,072</font></td><td class="tplaytime" data-order="101">01:41 (00:09)</td></tr>
+<tr>
+<td>134</td>
+<td data-order="LoveBeat"><a href=/app/354290><img src="http://cdn.akamai.steamstatic.com/steam/apps/354290/capsule_184x69.jpg" class="img-ss-list"> LoveBeat</a></td>
+<td class="treleasedate" data-order="2016-01-13">Jan 13, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="34">34% (71%)</td><td data-order="116773">116,773 <font class="small">&plusmn;8,841</font></td><td class="tplaytime" data-order="580">09:40 (00:34)</td></tr>
+<tr>
+<td>135</td>
+<td data-order="Fishing Planet"><a href=/app/380600><img src="http://cdn.akamai.steamstatic.com/steam/apps/380600/capsule_184x69.jpg" class="img-ss-list"> Fishing Planet</a></td>
+<td class="treleasedate" data-order="2015-08-11">Aug 11, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="49">49% (79%)</td><td data-order="1622193">1,622,193 <font class="small">&plusmn;32,879</font></td><td class="tplaytime" data-order="527">08:47 (00:38)</td></tr>
+<tr>
+<td>136</td>
+<td data-order="Survival: Postapocalypse Now"><a href=/app/351290><img src="http://cdn.akamai.steamstatic.com/steam/apps/351290/capsule_184x69.jpg" class="img-ss-list"> Survival: Postapocalypse Now</a></td>
+<td class="treleasedate" data-order="2015-04-16">Apr 16, 2015</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="17">17% (58%)</td><td data-order="126241">126,241 <font class="small">&plusmn;9,193</font></td><td class="tplaytime" data-order="504">08:24 (02:10)</td></tr>
+<tr>
+<td>137</td>
+<td data-order="Colonies Online"><a href=/app/283100><img src="http://cdn.akamai.steamstatic.com/steam/apps/283100/capsule_184x69.jpg" class="img-ss-list"> Colonies Online</a></td>
+<td class="treleasedate" data-order="2014-05-01">May 1, 2014</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="7">7% (42%)</td><td data-order="12624">12,624 <font class="small">&plusmn;2,907</font></td><td class="tplaytime" data-order="138">02:18 (01:14)</td></tr>
+<tr>
+<td>138</td>
+<td data-order="War of the Immortals"><a href=/app/209710><img src="http://cdn.akamai.steamstatic.com/steam/apps/209710/capsule_184x69.jpg" class="img-ss-list"> War of the Immortals</a></td>
+<td class="treleasedate" data-order="2012-08-30">Aug 30, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="386437">386,437 <font class="small">&plusmn;16,078</font></td><td class="tplaytime" data-order="628">10:28 (01:01)</td></tr>
+<tr>
+<td>139</td>
+<td data-order="Dig 4 Destruction"><a href=/app/503340><img src="http://cdn.akamai.steamstatic.com/steam/apps/503340/capsule_184x69.jpg" class="img-ss-list"> Dig 4 Destruction</a></td>
+<td class="treleasedate" data-order="2016-08-14">Aug 14, 2016</td>
+<td class="tprice" data-order="1199">$11.99</td><td class="tuserscore" data-order="93">93% (95%)</td><td data-order="1929">1,929 <font class="small">&plusmn;1,136</font></td><td class="tplaytime" data-order="52">00:52 (00:38)</td></tr>
+<tr>
+<td>140</td>
+<td data-order="Forge of Gods (RPG)"><a href=/app/461910><img src="http://cdn.akamai.steamstatic.com/steam/apps/461910/capsule_184x69.jpg" class="img-ss-list"> Forge of Gods (RPG)</a></td>
+<td class="treleasedate" data-order="2016-05-06">May 6, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="49">49% (79%)</td><td data-order="149911">149,911 <font class="small">&plusmn;10,017</font></td><td class="tplaytime" data-order="752">12:32 (00:54)</td></tr>
+<tr>
+<td>141</td>
+<td data-order="Atom Universe"><a href=/app/394120><img src="http://cdn.akamai.steamstatic.com/steam/apps/394120/capsule_184x69.jpg" class="img-ss-list"> Atom Universe</a></td>
+<td class="treleasedate" data-order="2016-03-04">Mar 4, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="10">10% (48%)</td><td data-order="71186">71,186 <font class="small">&plusmn;6,903</font></td><td class="tplaytime" data-order="18">00:18 (00:08)</td></tr>
+<tr>
+<td>142</td>
+<td data-order="Drift Streets Japan"><a href=/app/412880><img src="http://cdn.akamai.steamstatic.com/steam/apps/412880/capsule_184x69.jpg" class="img-ss-list"> Drift Streets Japan</a></td>
+<td class="treleasedate" data-order="2015-12-21">Dec 21, 2015</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="41">41% (75%)</td><td data-order="118877">118,877 <font class="small">&plusmn;8,921</font></td><td class="tplaytime" data-order="524">08:44 (03:43)</td></tr>
+<tr>
+<td>143</td>
+<td data-order="Metal Reaper Online"><a href=/app/362070><img src="http://cdn.akamai.steamstatic.com/steam/apps/362070/capsule_184x69.jpg" class="img-ss-list"> Metal Reaper Online</a></td>
+<td class="treleasedate" data-order="2015-09-17">Sep 17, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="30">30% (68%)</td><td data-order="185328">185,328 <font class="small">&plusmn;11,137</font></td><td class="tplaytime" data-order="190">03:10 (00:21)</td></tr>
+<tr>
+<td>144</td>
+<td data-order="Once Bitten, Twice Dead!"><a href=/app/360590><img src="http://cdn.akamai.steamstatic.com/steam/apps/360590/capsule_184x69.jpg" class="img-ss-list"> Once Bitten, Twice Dead!</a></td>
+<td class="treleasedate" data-order="2015-07-07">Jul 7, 2015</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="0">0% (18%)</td><td data-order="22267">22,267 <font class="small">&plusmn;3,861</font></td><td class="tplaytime" data-order="236">03:56 (03:58)</td></tr>
+<tr>
+<td>145</td>
+<td data-order="Transformice"><a href=/app/335240><img src="http://cdn.akamai.steamstatic.com/steam/apps/335240/capsule_184x69.jpg" class="img-ss-list"> Transformice</a></td>
+<td class="treleasedate" data-order="2015-01-30">Jan 30, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="56">56% (82%)</td><td data-order="1834523">1,834,523 <font class="small">&plusmn;34,954</font></td><td class="tplaytime" data-order="779">12:59 (00:41)</td></tr>
+<tr>
+<td>146</td>
+<td data-order="Royal Quest"><a href=/app/295550><img src="http://cdn.akamai.steamstatic.com/steam/apps/295550/capsule_184x69.jpg" class="img-ss-list"> Royal Quest</a></td>
+<td class="treleasedate" data-order="2014-08-06">Aug 6, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="26">26% (66%)</td><td data-order="708175">708,175 <font class="small">&plusmn;21,754</font></td><td class="tplaytime" data-order="700">11:40 (00:56)</td></tr>
+<tr>
+<td>147</td>
+<td data-order="NEStalgia"><a href=/app/249550><img src="http://cdn.akamai.steamstatic.com/steam/apps/249550/capsule_184x69.jpg" class="img-ss-list"> NEStalgia</a></td>
+<td class="treleasedate" data-order="2014-04-15">Apr 15, 2014</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="49">49% (79%)</td><td data-order="25248">25,248 <font class="small">&plusmn;4,111</font></td><td class="tplaytime" data-order="1334">22:14 (03:20)</td></tr>
+<tr>
+<td>148</td>
+<td data-order="Dragon Nest"><a href=/app/11610><img src="http://cdn.akamai.steamstatic.com/steam/apps/11610/capsule_184x69.jpg" class="img-ss-list"> Dragon Nest</a></td>
+<td class="treleasedate" data-order="2012-12-18">Dec 18, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="59">59% (83%)</td><td data-order="540906">540,906 <font class="small">&plusmn;19,017</font></td><td class="tplaytime" data-order="1693">28:13 (02:18)</td></tr>
+<tr>
+<td>149</td>
+<td data-order="Hide & Hold Out - H2o"><a href=/app/377140><img src="http://cdn.akamai.steamstatic.com/steam/apps/377140/capsule_184x69.jpg" class="img-ss-list"> Hide & Hold Out - H2o</a></td>
+<td class="treleasedate" data-order="2016-04-09">Apr 9, 2016</td>
+<td class="tprice" data-order="1799">$17.99</td><td class="tuserscore" data-order="30">30% (68%)</td><td data-order="10695">10,695 <font class="small">&plusmn;2,676</font></td><td class="tplaytime" data-order="1050">17:30 (08:59)</td></tr>
+<tr>
+<td>150</td>
+<td data-order="Trinium Wars"><a href=/app/410560><img src="http://cdn.akamai.steamstatic.com/steam/apps/410560/capsule_184x69.jpg" class="img-ss-list"> Trinium Wars</a></td>
+<td class="treleasedate" data-order="2016-03-02">Mar 2, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="15">15% (55%)</td><td data-order="198829">198,829 <font class="small">&plusmn;11,536</font></td><td class="tplaytime" data-order="457">07:37 (09:39)</td></tr>
+<tr>
+<td>151</td>
+<td data-order="Gladiators Online: Death Before Dishonor"><a href=/app/385880><img src="http://cdn.akamai.steamstatic.com/steam/apps/385880/capsule_184x69.jpg" class="img-ss-list"> Gladiators Online: Death Before Dishonor</a></td>
+<td class="treleasedate" data-order="2015-11-04">Nov 4, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="6">6% (41%)</td><td data-order="132553">132,553 <font class="small">&plusmn;9,420</font></td><td class="tplaytime" data-order="112">01:52 (00:18)</td></tr>
+<tr>
+<td>152</td>
+<td data-order="Musclecar Online"><a href=/app/346440><img src="http://cdn.akamai.steamstatic.com/steam/apps/346440/capsule_184x69.jpg" class="img-ss-list"> Musclecar Online</a></td>
+<td class="treleasedate" data-order="2015-02-12">Feb 12, 2015</td>
+<td class="tprice" data-order="599">$5.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="12449">12,449 <font class="small">&plusmn;2,887</font></td><td class="tplaytime" data-order="53">00:53 (01:11)</td></tr>
+<tr>
+<td>153</td>
+<td data-order="Divine Souls"><a href=/app/300040><img src="http://cdn.akamai.steamstatic.com/steam/apps/300040/capsule_184x69.jpg" class="img-ss-list"> Divine Souls</a></td>
+<td class="treleasedate" data-order="2014-08-15">Aug 15, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="10">10% (49%)</td><td data-order="506190">506,190 <font class="small">&plusmn;18,398</font></td><td class="tplaytime" data-order="53">00:53 (00:12)</td></tr>
+<tr>
+<td>154</td>
+<td data-order="Villagers and Heroes"><a href=/app/263540><img src="http://cdn.akamai.steamstatic.com/steam/apps/263540/capsule_184x69.jpg" class="img-ss-list"> Villagers and Heroes</a></td>
+<td class="treleasedate" data-order="2014-04-17">Apr 17, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="15">15% (56%)</td><td data-order="640145">640,145 <font class="small">&plusmn;20,685</font></td><td class="tplaytime" data-order="516">08:36 (00:26)</td></tr>
+<tr>
+<td>155</td>
+<td data-order="Football Superstars"><a href=/app/219870><img src="http://cdn.akamai.steamstatic.com/steam/apps/219870/capsule_184x69.jpg" class="img-ss-list"> Football Superstars</a></td>
+<td class="treleasedate" data-order="2012-11-16">Nov 16, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="13">13% (53%)</td><td data-order="439037">439,037 <font class="small">&plusmn;17,135</font></td><td class="tplaytime" data-order="236">03:56 (00:28)</td></tr>
+<tr>
+<td>156</td>
+<td data-order="Kalonline"><a href=/app/475100><img src="http://cdn.akamai.steamstatic.com/steam/apps/475100/capsule_184x69.jpg" class="img-ss-list"> Kalonline</a></td>
+<td class="treleasedate" data-order="2016-07-13">Jul 13, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="12">12% (51%)</td><td data-order="85563">85,563 <font class="small">&plusmn;7,568</font></td><td class="tplaytime" data-order="2074">34:34 (00:14)</td></tr>
+<tr>
+<td>157</td>
+<td data-order="Fantasy Tales Online"><a href=/app/442710><img src="http://cdn.akamai.steamstatic.com/steam/apps/442710/capsule_184x69.jpg" class="img-ss-list"> Fantasy Tales Online</a></td>
+<td class="treleasedate" data-order="2016-05-05">May 5, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="47">47% (78%)</td><td data-order="103623">103,623 <font class="small">&plusmn;8,329</font></td><td class="tplaytime" data-order="83">01:23 (00:14)</td></tr>
+<tr>
+<td>158</td>
+<td data-order="Tower Unite"><a href=/app/394690><img src="http://cdn.akamai.steamstatic.com/steam/apps/394690/capsule_184x69.jpg" class="img-ss-list"> Tower Unite</a></td>
+<td class="treleasedate" data-order="2016-04-08">Apr 8, 2016</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="59">59% (83%)</td><td data-order="34190">34,190 <font class="small">&plusmn;4,784</font></td><td class="tplaytime" data-order="641">10:41 (04:53)</td></tr>
+<tr>
+<td>159</td>
+<td data-order="Ghost in the Shell: Stand Alone Complex - First Assault Online"><a href=/app/369200><img src="http://cdn.akamai.steamstatic.com/steam/apps/369200/capsule_184x69.jpg" class="img-ss-list"> Ghost in the Shell: Stand Alone Complex - First Assault Online</a></td>
+<td class="treleasedate" data-order="2016-07-28">Jul 28, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="31">31% (69%)</td><td data-order="913141">913,141 <font class="small">&plusmn;24,695</font></td><td class="tplaytime" data-order="319">05:19 (01:07)</td></tr>
+<tr>
+<td>160</td>
+<td data-order="Assault CorpsII"><a href=/app/376120><img src="http://cdn.akamai.steamstatic.com/steam/apps/376120/capsule_184x69.jpg" class="img-ss-list"> Assault CorpsII</a></td>
+<td class="treleasedate" data-order="2015-07-15">Jul 15, 2015</td>
+<td class="tprice" data-order="299">$2.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="2981">2,981 <font class="small">&plusmn;1,412</font></td><td class="tplaytime" data-order="52">00:52 (01:15)</td></tr>
+<tr>
+<td>161</td>
+<td data-order="Survarium"><a href=/app/355840><img src="http://cdn.akamai.steamstatic.com/steam/apps/355840/capsule_184x69.jpg" class="img-ss-list"> Survarium</a></td>
+<td class="treleasedate" data-order="2015-04-02">Apr 2, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="11">11% (50%)</td><td data-order="2771509">2,771,509 <font class="small">&plusmn;42,901</font></td><td class="tplaytime" data-order="289">04:49 (00:31)</td></tr>
+<tr>
+<td>162</td>
+<td data-order="Uncharted Waters Online: Gran Atlas"><a href=/app/317110><img src="http://cdn.akamai.steamstatic.com/steam/apps/317110/capsule_184x69.jpg" class="img-ss-list"> Uncharted Waters Online: Gran Atlas</a></td>
+<td class="treleasedate" data-order="2014-10-03">Oct 3, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="24">24% (64%)</td><td data-order="236701">236,701 <font class="small">&plusmn;12,586</font></td><td class="tplaytime" data-order="973">16:13 (00:29)</td></tr>
+<tr>
+<td>163</td>
+<td data-order="Hero Siege"><a href=/app/269210><img src="http://cdn.akamai.steamstatic.com/steam/apps/269210/capsule_184x69.jpg" class="img-ss-list"> Hero Siege</a></td>
+<td class="treleasedate" data-order="2014-01-29">Jan 29, 2014</td>
+<td class="tprice" data-order="599">$5.99</td><td class="tuserscore" data-order="52">52% (80%)</td><td data-order="855807">855,807 <font class="small">&plusmn;23,909</font></td><td class="tplaytime" data-order="671">11:11 (03:58)</td></tr>
+<tr>
+<td>164</td>
+<td data-order="Tree of Life: Beginning of a Journey"><a href=/app/361800><img src="http://cdn.akamai.steamstatic.com/steam/apps/361800/capsule_184x69.jpg" class="img-ss-list"> Tree of Life: Beginning of a Journey</a></td>
+<td class="treleasedate" data-order="2015-05-27">May 27, 2015</td>
+<td class="tprice" data-order="1399">$13.99</td><td class="tuserscore" data-order="47">47% (78%)</td><td data-order="76095">76,095 <font class="small">&plusmn;7,137</font></td><td class="tplaytime" data-order="2884">48:04 (12:40)</td></tr>
+<tr>
+<td>165</td>
+<td data-order="ShellShock Live"><a href=/app/326460><img src="http://cdn.akamai.steamstatic.com/steam/apps/326460/capsule_184x69.jpg" class="img-ss-list"> ShellShock Live</a></td>
+<td class="treleasedate" data-order="2015-03-11">Mar 11, 2015</td>
+<td class="tprice" data-order="699">$6.99</td><td class="tuserscore" data-order="69">69% (87%)</td><td data-order="445524">445,524 <font class="small">&plusmn;17,261</font></td><td class="tplaytime" data-order="1090">18:10 (09:02)</td></tr>
+<tr>
+<td>166</td>
+<td data-order="Wander"><a href=/app/293280><img src="http://cdn.akamai.steamstatic.com/steam/apps/293280/capsule_184x69.jpg" class="img-ss-list"> Wander</a></td>
+<td class="treleasedate" data-order="2015-06-04">Jun 4, 2015</td>
+<td class="tprice" data-order="899">$8.99</td><td class="tuserscore" data-order="3">3% (33%)</td><td data-order="1578">1,578 <font class="small">&plusmn;1,028</font></td><td class="tplaytime" data-order="115">01:55 (01:46)</td></tr>
+<tr>
+<td>167</td>
+<td data-order="Atlantica"><a href=/app/212240><img src="http://cdn.akamai.steamstatic.com/steam/apps/212240/capsule_184x69.jpg" class="img-ss-list"> Atlantica</a></td>
+<td class="treleasedate" data-order="2012-06-29">Jun 29, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="36">36% (72%)</td><td data-order="257566">257,566 <font class="small">&plusmn;13,128</font></td><td class="tplaytime" data-order="4957">82:37 (00:59)</td></tr>
+<tr>
+<td>168</td>
+<td data-order="Dungeon Fighter Online"><a href=/app/495910><img src="http://cdn.akamai.steamstatic.com/steam/apps/495910/capsule_184x69.jpg" class="img-ss-list"> Dungeon Fighter Online</a></td>
+<td class="treleasedate" data-order="2016-08-09">Aug 9, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="61">61% (84%)</td><td data-order="178841">178,841 <font class="small">&plusmn;10,941</font></td><td class="tplaytime" data-order="739">12:19 (02:23)</td></tr>
+<tr>
+<td>169</td>
+<td data-order="Boundel"><a href=/app/454070><img src="http://cdn.akamai.steamstatic.com/steam/apps/454070/capsule_184x69.jpg" class="img-ss-list"> Boundel</a></td>
+<td class="treleasedate" data-order="2016-04-30">Apr 30, 2016</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="38">38% (73%)</td><td data-order="5786">5,786 <font class="small">&plusmn;1,968</font></td><td class="tplaytime" data-order="36">00:36 (00:18)</td></tr>
+<tr>
+<td>170</td>
+<td data-order="TrackmaniaÂ® Turbo"><a href=/app/375900><img src="http://cdn.akamai.steamstatic.com/steam/apps/375900/capsule_184x69.jpg" class="img-ss-list"> TrackmaniaÂ® Turbo</a></td>
+<td class="treleasedate" data-order="2016-03-24">Mar 24, 2016</td>
+<td class="tprice" data-order="3999">$39.99</td><td class="tuserscore" data-order="20">20% (61%)</td><td data-order="35944">35,944 <font class="small">&plusmn;4,906</font></td><td class="tplaytime" data-order="793">13:13 (07:17)</td></tr>
+<tr>
+<td>171</td>
+<td data-order="Star Crusade CCG"><a href=/app/415270><img src="http://cdn.akamai.steamstatic.com/steam/apps/415270/capsule_184x69.jpg" class="img-ss-list"> Star Crusade CCG</a></td>
+<td class="treleasedate" data-order="2016-09-07">Sep 7, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="41">41% (75%)</td><td data-order="97837">97,837 <font class="small">&plusmn;8,093</font></td><td class="tplaytime" data-order="587">09:47 (01:01)</td></tr>
+<tr>
+<td>172</td>
+<td data-order="Wind of Luck: Arena"><a href=/app/380770><img src="http://cdn.akamai.steamstatic.com/steam/apps/380770/capsule_184x69.jpg" class="img-ss-list"> Wind of Luck: Arena</a></td>
+<td class="treleasedate" data-order="2015-08-18">Aug 18, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="15">15% (56%)</td><td data-order="143774">143,774 <font class="small">&plusmn;9,810</font></td><td class="tplaytime" data-order="184">03:04 (00:26)</td></tr>
+<tr>
+<td>173</td>
+<td data-order="Crossout"><a href=/app/386180><img src="http://cdn.akamai.steamstatic.com/steam/apps/386180/capsule_184x69.jpg" class="img-ss-list"> Crossout</a></td>
+<td class="treleasedate" data-order="2016-08-24">Aug 24, 2016</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="49">49% (79%)</td><td data-order="5961">5,961 <font class="small">&plusmn;1,998</font></td><td class="tplaytime" data-order="699">11:39 (08:09)</td></tr>
+<tr>
+<td>174</td>
+<td data-order="Screeps"><a href=/app/464350><img src="http://cdn.akamai.steamstatic.com/steam/apps/464350/capsule_184x69.jpg" class="img-ss-list"> Screeps</a></td>
+<td class="treleasedate" data-order="2016-06-20">Jun 20, 2016</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="84">84% (92%)</td><td data-order="4559">4,559 <font class="small">&plusmn;1,747</font></td><td class="tplaytime" data-order="2717">45:17 (72:28)</td></tr>
+<tr>
+<td>175</td>
+<td data-order="Emporea"><a href=/app/416450><img src="http://cdn.akamai.steamstatic.com/steam/apps/416450/capsule_184x69.jpg" class="img-ss-list"> Emporea</a></td>
+<td class="treleasedate" data-order="2016-06-08">Jun 8, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="19">19% (60%)</td><td data-order="129221">129,221 <font class="small">&plusmn;9,300</font></td><td class="tplaytime" data-order="399">06:39 (00:19)</td></tr>
+<tr>
+<td>176</td>
+<td data-order="Aftermath"><a href=/app/349700><img src="http://cdn.akamai.steamstatic.com/steam/apps/349700/capsule_184x69.jpg" class="img-ss-list"> Aftermath</a></td>
+<td class="treleasedate" data-order="2015-09-24">Sep 24, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="7">7% (44%)</td><td data-order="1834698">1,834,698 <font class="small">&plusmn;34,955</font></td><td class="tplaytime" data-order="297">04:57 (00:48)</td></tr>
+<tr>
+<td>177</td>
+<td data-order="Instinct"><a href=/app/373080><img src="http://cdn.akamai.steamstatic.com/steam/apps/373080/capsule_184x69.jpg" class="img-ss-list"> Instinct</a></td>
+<td class="treleasedate" data-order="2015-06-01">Jun 1, 2015</td>
+<td class="tprice" data-order="199">$1.99</td><td class="tuserscore" data-order="2">2% (28%)</td><td data-order="10695">10,695 <font class="small">&plusmn;2,676</font></td><td class="tplaytime" data-order="142">02:22 (01:46)</td></tr>
+<tr>
+<td>178</td>
+<td data-order="Navy Field 2 : Conqueror of the Ocean"><a href=/app/338540><img src="http://cdn.akamai.steamstatic.com/steam/apps/338540/capsule_184x69.jpg" class="img-ss-list"> Navy Field 2 : Conqueror of the Ocean</a></td>
+<td class="treleasedate" data-order="2015-03-05">Mar 5, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="9">9% (47%)</td><td data-order="514431">514,431 <font class="small">&plusmn;18,546</font></td><td class="tplaytime" data-order="249">04:09 (00:21)</td></tr>
+<tr>
+<td>179</td>
+<td data-order="Eldevin"><a href=/app/298160><img src="http://cdn.akamai.steamstatic.com/steam/apps/298160/capsule_184x69.jpg" class="img-ss-list"> Eldevin</a></td>
+<td class="treleasedate" data-order="2014-11-05">Nov 5, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="45">45% (77%)</td><td data-order="320511">320,511 <font class="small">&plusmn;14,643</font></td><td class="tplaytime" data-order="600">10:00 (00:29)</td></tr>
+<tr>
+<td>180</td>
+<td data-order="Entropy"><a href=/app/255500><img src="http://cdn.akamai.steamstatic.com/steam/apps/255500/capsule_184x69.jpg" class="img-ss-list"> Entropy</a></td>
+<td class="treleasedate" data-order="2013-12-09">Dec 9, 2013</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="4">4% (35%)</td><td data-order="20865">20,865 <font class="small">&plusmn;3,738</font></td><td class="tplaytime" data-order="418">06:58 (02:06)</td></tr>
+<tr>
+<td>181</td>
+<td data-order="MapleStory"><a href=/app/216150><img src="http://cdn.akamai.steamstatic.com/steam/apps/216150/capsule_184x69.jpg" class="img-ss-list"> MapleStory</a></td>
+<td class="treleasedate" data-order="2012-08-09">Aug 9, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="601923">601,923 <font class="small">&plusmn;20,059</font></td><td class="tplaytime" data-order="2484">41:24 (01:43)</td></tr>
+<tr>
+<td>182</td>
+<td data-order="Killbot"><a href=/app/473810><img src="http://cdn.akamai.steamstatic.com/steam/apps/473810/capsule_184x69.jpg" class="img-ss-list"> Killbot</a></td>
+<td class="treleasedate" data-order="2016-07-10">Jul 10, 2016</td>
+<td class="tprice" data-order="199">$1.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="1227">1,227 <font class="small">&plusmn;906</font></td><td class="tplaytime" data-order="8">00:08 (00:04)</td></tr>
+<tr>
+<td>183</td>
+<td data-order="Forgotten Lore"><a href=/app/391240><img src="http://cdn.akamai.steamstatic.com/steam/apps/391240/capsule_184x69.jpg" class="img-ss-list"> Forgotten Lore</a></td>
+<td class="treleasedate" data-order="2016-05-29">May 29, 2016</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="5961">5,961 <font class="small">&plusmn;1,998</font></td><td class="tplaytime" data-order="254">04:14 (04:28)</td></tr>
+<tr>
+<td>184</td>
+<td data-order="Full Tilt Poker"><a href=/app/426560><img src="http://cdn.akamai.steamstatic.com/steam/apps/426560/capsule_184x69.jpg" class="img-ss-list"> Full Tilt Poker</a></td>
+<td class="treleasedate" data-order="2016-01-26">Jan 26, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="5">5% (37%)</td><td data-order="60315">60,315 <font class="small">&plusmn;6,355</font></td><td class="tplaytime" data-order="64">01:04 (00:12)</td></tr>
+<tr>
+<td>185</td>
+<td data-order="Heroes and Titans: Online"><a href=/app/407090><img src="http://cdn.akamai.steamstatic.com/steam/apps/407090/capsule_184x69.jpg" class="img-ss-list"> Heroes and Titans: Online</a></td>
+<td class="treleasedate" data-order="2015-11-12">Nov 12, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="2">2% (29%)</td><td data-order="43132">43,132 <font class="small">&plusmn;5,374</font></td><td class="tplaytime" data-order="437">07:17 (01:07)</td></tr>
+<tr>
+<td>186</td>
+<td data-order="Spy Bugs"><a href=/app/366860><img src="http://cdn.akamai.steamstatic.com/steam/apps/366860/capsule_184x69.jpg" class="img-ss-list"> Spy Bugs</a></td>
+<td class="treleasedate" data-order="2015-06-26">Jun 26, 2015</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="8241">8,241 <font class="small">&plusmn;2,349</font></td><td class="tplaytime" data-order="237">03:57 (11:27)</td></tr>
+<tr>
+<td>187</td>
+<td data-order="Grand Chase"><a href=/app/304270><img src="http://cdn.akamai.steamstatic.com/steam/apps/304270/capsule_184x69.jpg" class="img-ss-list"> Grand Chase</a></td>
+<td class="treleasedate" data-order="2015-07-17">17 Jul, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="43">43% (76%)</td><td data-order="566856">566,856 <font class="small">&plusmn;19,467</font></td><td class="tplaytime" data-order="418">06:58 (00:22)</td></tr>
+<tr>
+<td>188</td>
+<td data-order="City of Steam: Arkadia"><a href=/app/266070><img src="http://cdn.akamai.steamstatic.com/steam/apps/266070/capsule_184x69.jpg" class="img-ss-list"> City of Steam: Arkadia</a></td>
+<td class="treleasedate" data-order="2014-03-06">Mar 6, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="19">19% (60%)</td><td data-order="300348">300,348 <font class="small">&plusmn;14,176</font></td><td class="tplaytime" data-order="468">07:48 (00:40)</td></tr>
+<tr>
+<td>189</td>
+<td data-order="F.E.A.R. Online"><a href=/app/223650><img src="http://cdn.akamai.steamstatic.com/steam/apps/223650/capsule_184x69.jpg" class="img-ss-list"> F.E.A.R. Online</a></td>
+<td class="treleasedate" data-order="2014-10-21">Oct 21, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="6">6% (40%)</td><td data-order="960832">960,832 <font class="small">&plusmn;25,330</font></td><td class="tplaytime" data-order="209">03:29 (00:51)</td></tr>
+<tr>
+<td>190</td>
+<td data-order="Strike.is: The Game"><a href=/app/502550><img src="http://cdn.akamai.steamstatic.com/steam/apps/502550/capsule_184x69.jpg" class="img-ss-list"> Strike.is: The Game</a></td>
+<td class="treleasedate" data-order="2016-07-14">Jul 14, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="318758">318,758 <font class="small">&plusmn;14,603</font></td><td class="tplaytime" data-order="49">00:49 (00:14)</td></tr>
+<tr>
+<td>191</td>
+<td data-order="Crazy Killer"><a href=/app/448460><img src="http://cdn.akamai.steamstatic.com/steam/apps/448460/capsule_184x69.jpg" class="img-ss-list"> Crazy Killer</a></td>
+<td class="treleasedate" data-order="2016-04-26">Apr 26, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="8">8% (45%)</td><td data-order="185854">185,854 <font class="small">&plusmn;11,153</font></td><td class="tplaytime" data-order="24">00:24 (00:10)</td></tr>
+<tr>
+<td>192</td>
+<td data-order="Lucent Heart F2P MMO"><a href=/app/283060><img src="http://cdn.akamai.steamstatic.com/steam/apps/283060/capsule_184x69.jpg" class="img-ss-list"> Lucent Heart F2P MMO</a></td>
+<td class="treleasedate" data-order="2016-02-11">Feb 11, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="10">10% (48%)</td><td data-order="125539">125,539 <font class="small">&plusmn;9,167</font></td><td class="tplaytime" data-order="102">01:42 (00:18)</td></tr>
+<tr>
+<td>193</td>
+<td data-order="Storm United"><a href=/app/332970><img src="http://cdn.akamai.steamstatic.com/steam/apps/332970/capsule_184x69.jpg" class="img-ss-list"> Storm United</a></td>
+<td class="treleasedate" data-order="2015-04-17">Apr 17, 2015</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="23">23% (63%)</td><td data-order="24021">24,021 <font class="small">&plusmn;4,010</font></td><td class="tplaytime" data-order="45">00:45 (00:24)</td></tr>
+<tr>
+<td>194</td>
+<td data-order="The Repopulation"><a href=/app/322300><img src="http://cdn.akamai.steamstatic.com/steam/apps/322300/capsule_184x69.jpg" class="img-ss-list"> The Repopulation</a></td>
+<td class="treleasedate" data-order="2014-12-22">Dec 22, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="26">26% (66%)</td><td data-order="36294">36,294 <font class="small">&plusmn;4,929</font></td><td class="tplaytime" data-order="1017">16:57 (04:51)</td></tr>
+<tr>
+<td>195</td>
+<td data-order="Creativerse"><a href=/app/280790><img src="http://cdn.akamai.steamstatic.com/steam/apps/280790/capsule_184x69.jpg" class="img-ss-list"> Creativerse</a></td>
+<td class="treleasedate" data-order="2014-08-12">Aug 12, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="61">61% (84%)</td><td data-order="1838906">1,838,906 <font class="small">&plusmn;34,995</font></td><td class="tplaytime" data-order="507">08:27 (01:23)</td></tr>
+<tr>
+<td>196</td>
+<td data-order="Ragnarok Online 2"><a href=/app/231060><img src="http://cdn.akamai.steamstatic.com/steam/apps/231060/capsule_184x69.jpg" class="img-ss-list"> Ragnarok Online 2</a></td>
+<td class="treleasedate" data-order="2013-05-01">May 1, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="19">19% (60%)</td><td data-order="1158784">1,158,784 <font class="small">&plusmn;27,808</font></td><td class="tplaytime" data-order="1052">17:32 (00:59)</td></tr>
+<tr>
+<td>197</td>
+<td data-order="Dungeons & Dragons Online"><a href=/app/206480><img src="http://cdn.akamai.steamstatic.com/steam/apps/206480/capsule_184x69.jpg" class="img-ss-list"> Dungeons & Dragons Online</a></td>
+<td class="treleasedate" data-order="2012-06-25">Jun 25, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="43">43% (76%)</td><td data-order="651016">651,016 <font class="small">&plusmn;20,860</font></td><td class="tplaytime" data-order="1152">19:12 (01:03)</td></tr>
+<tr>
+<td>198</td>
+<td data-order="Evolvation"><a href=/app/510840><img src="http://cdn.akamai.steamstatic.com/steam/apps/510840/capsule_184x69.jpg" class="img-ss-list"> Evolvation</a></td>
+<td class="treleasedate" data-order="2016-08-23">Aug 23, 2016</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="514">514 <font class="small">&plusmn;1,005</font></td><td class="tplaytime" data-order="0">00:00 (00:00)</td></tr>
+<tr>
+<td>199</td>
+<td data-order="Riders of Icarus"><a href=/app/442080><img src="http://cdn.akamai.steamstatic.com/steam/apps/442080/capsule_184x69.jpg" class="img-ss-list"> Riders of Icarus</a></td>
+<td class="treleasedate" data-order="2016-07-06">Jul 6, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="20">20% (61%)</td><td data-order="1275557">1,275,557 <font class="small">&plusmn;29,171</font></td><td class="tplaytime" data-order="784">13:04 (01:21)</td></tr>
+<tr>
+<td>200</td>
+<td data-order="Faeria"><a href=/app/397060><img src="http://cdn.akamai.steamstatic.com/steam/apps/397060/capsule_184x69.jpg" class="img-ss-list"> Faeria</a></td>
+<td class="treleasedate" data-order="2016-02-29">Feb 29, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="61">61% (84%)</td><td data-order="326122">326,122 <font class="small">&plusmn;14,771</font></td><td class="tplaytime" data-order="542">09:02 (02:26)</td></tr>
+<tr>
+<td>201</td>
+<td data-order="Cards and Castles"><a href=/app/360730><img src="http://cdn.akamai.steamstatic.com/steam/apps/360730/capsule_184x69.jpg" class="img-ss-list"> Cards and Castles</a></td>
+<td class="treleasedate" data-order="2015-12-18">Dec 18, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="30">30% (68%)</td><td data-order="92051">92,051 <font class="small">&plusmn;7,850</font></td><td class="tplaytime" data-order="242">04:02 (01:10)</td></tr>
+<tr>
+<td>202</td>
+<td data-order="ARK: Survival Evolved"><a href=/app/346110><img src="http://cdn.akamai.steamstatic.com/steam/apps/346110/capsule_184x69.jpg" class="img-ss-list"> ARK: Survival Evolved</a></td>
+<td class="treleasedate" data-order="2015-06-02">Jun 2, 2015</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="31">31% (69%)</td><td data-order="3628894">3,628,894 <font class="small">&plusmn;49,026</font></td><td class="tplaytime" data-order="6534">108:54 (15:00)</td></tr>
+<tr>
+<td>203</td>
+<td data-order="Gates of Horizon"><a href=/app/334290><img src="http://cdn.akamai.steamstatic.com/steam/apps/334290/capsule_184x69.jpg" class="img-ss-list"> Gates of Horizon</a></td>
+<td class="treleasedate" data-order="2014-12-18">Dec 18, 2014</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="2279">2,279 <font class="small">&plusmn;1,235</font></td><td class="tplaytime" data-order="392">06:32 (09:25)</td></tr>
+<tr>
+<td>204</td>
+<td data-order="H1Z1"><a href=/app/295110><img src="http://cdn.akamai.steamstatic.com/steam/apps/295110/capsule_184x69.jpg" class="img-ss-list"> H1Z1</a></td>
+<td class="treleasedate" data-order="2015-01-15">Jan 15, 2015</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="24">24% (64%)</td><td data-order="2484487">2,484,487 <font class="small">&plusmn;40,637</font></td><td class="tplaytime" data-order="3708">61:48 (16:42)</td></tr>
+<tr>
+<td>205</td>
+<td data-order="Gloria Victis"><a href=/app/327070><img src="http://cdn.akamai.steamstatic.com/steam/apps/327070/capsule_184x69.jpg" class="img-ss-list"> Gloria Victis</a></td>
+<td class="treleasedate" data-order="2016-06-09">Jun 9, 2016</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="31">31% (69%)</td><td data-order="36294">36,294 <font class="small">&plusmn;4,929</font></td><td class="tplaytime" data-order="1514">25:14 (04:05)</td></tr>
+<tr>
+<td>206</td>
+<td data-order="PWI"><a href=/app/442110><img src="http://cdn.akamai.steamstatic.com/steam/apps/442110/capsule_184x69.jpg" class="img-ss-list"> PWI</a></td>
+<td class="treleasedate" data-order="2016-04-19">Apr 19, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="8">8% (45%)</td><td data-order="72238">72,238 <font class="small">&plusmn;6,954</font></td><td class="tplaytime" data-order="1207">20:07 (00:34)</td></tr>
+<tr>
+<td>207</td>
+<td data-order="Hounds: The Last Hope"><a href=/app/366160><img src="http://cdn.akamai.steamstatic.com/steam/apps/366160/capsule_184x69.jpg" class="img-ss-list"> Hounds: The Last Hope</a></td>
+<td class="treleasedate" data-order="2016-01-27">Jan 27, 2016</td>
+<td class="tprice" data-order="3499">$34.99</td><td class="tuserscore" data-order="26">26% (66%)</td><td data-order="3682">3,682 <font class="small">&plusmn;1,570</font></td><td class="tplaytime" data-order="3959">65:59 (09:12)</td></tr>
+<tr>
+<td>208</td>
+<td data-order="Battle Battalions"><a href=/app/399660><img src="http://cdn.akamai.steamstatic.com/steam/apps/399660/capsule_184x69.jpg" class="img-ss-list"> Battle Battalions</a></td>
+<td class="treleasedate" data-order="2015-11-03">Nov 3, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="15">15% (56%)</td><td data-order="144300">144,300 <font class="small">&plusmn;9,828</font></td><td class="tplaytime" data-order="96">01:36 (00:15)</td></tr>
+<tr>
+<td>209</td>
+<td data-order="Subspace Continuum"><a href=/app/352700><img src="http://cdn.akamai.steamstatic.com/steam/apps/352700/capsule_184x69.jpg" class="img-ss-list"> Subspace Continuum</a></td>
+<td class="treleasedate" data-order="2015-07-03">Jul 3, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="66">66% (86%)</td><td data-order="96434">96,434 <font class="small">&plusmn;8,035</font></td><td class="tplaytime" data-order="173">02:53 (00:07)</td></tr>
+<tr>
+<td>210</td>
+<td data-order="Ascent - The Space Game"><a href=/app/345010><img src="http://cdn.akamai.steamstatic.com/steam/apps/345010/capsule_184x69.jpg" class="img-ss-list"> Ascent - The Space Game</a></td>
+<td class="treleasedate" data-order="2016-04-11">Apr 11, 2016</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="39">39% (74%)</td><td data-order="16657">16,657 <font class="small">&plusmn;3,339</font></td><td class="tplaytime" data-order="1019">16:59 (06:38)</td></tr>
+<tr>
+<td>211</td>
+<td data-order="Miscreated"><a href=/app/299740><img src="http://cdn.akamai.steamstatic.com/steam/apps/299740/capsule_184x69.jpg" class="img-ss-list"> Miscreated</a></td>
+<td class="treleasedate" data-order="2014-10-30">Oct 30, 2014</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="30">30% (68%)</td><td data-order="257566">257,566 <font class="small">&plusmn;13,128</font></td><td class="tplaytime" data-order="587">09:47 (03:16)</td></tr>
+<tr>
+<td>212</td>
+<td data-order="Jagged Alliance Online - Steam Edition"><a href=/app/218450><img src="http://cdn.akamai.steamstatic.com/steam/apps/218450/capsule_184x69.jpg" class="img-ss-list"> Jagged Alliance Online - Steam Edition</a></td>
+<td class="treleasedate" data-order="2013-06-05">Jun 5, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="12">12% (51%)</td><td data-order="129046">129,046 <font class="small">&plusmn;9,294</font></td><td class="tplaytime" data-order="678">11:18 (01:23)</td></tr>
+<tr>
+<td>213</td>
+<td data-order="Dragomon Hunter"><a href=/app/356330><img src="http://cdn.akamai.steamstatic.com/steam/apps/356330/capsule_184x69.jpg" class="img-ss-list"> Dragomon Hunter</a></td>
+<td class="treleasedate" data-order="2015-12-02">Dec 2, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="16">16% (57%)</td><td data-order="396431">396,431 <font class="small">&plusmn;16,284</font></td><td class="tplaytime" data-order="231">03:51 (00:42)</td></tr>
+<tr>
+<td>214</td>
+<td data-order="Choice Chamber"><a href=/app/359960><img src="http://cdn.akamai.steamstatic.com/steam/apps/359960/capsule_184x69.jpg" class="img-ss-list"> Choice Chamber</a></td>
+<td class="treleasedate" data-order="2015-07-16">Jul 16, 2015</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="84336">84,336 <font class="small">&plusmn;7,514</font></td><td class="tplaytime" data-order="160">02:40 (00:40)</td></tr>
+<tr>
+<td>215</td>
+<td data-order="FreeStyle2: Street Basketball"><a href=/app/339610><img src="http://cdn.akamai.steamstatic.com/steam/apps/339610/capsule_184x69.jpg" class="img-ss-list"> FreeStyle2: Street Basketball</a></td>
+<td class="treleasedate" data-order="2015-04-01">Apr 1, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="39">39% (74%)</td><td data-order="3706041">3,706,041 <font class="small">&plusmn;49,539</font></td><td class="tplaytime" data-order="796">13:16 (01:08)</td></tr>
+<tr>
+<td>216</td>
+<td data-order="sZone-Online"><a href=/app/316390><img src="http://cdn.akamai.steamstatic.com/steam/apps/316390/capsule_184x69.jpg" class="img-ss-list"> sZone-Online</a></td>
+<td class="treleasedate" data-order="2015-12-29">Dec 29, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="5">5% (39%)</td><td data-order="1627102">1,627,102 <font class="small">&plusmn;32,929</font></td><td class="tplaytime" data-order="206">03:26 (00:21)</td></tr>
+<tr>
+<td>217</td>
+<td data-order="Aura Kingdom"><a href=/app/268420><img src="http://cdn.akamai.steamstatic.com/steam/apps/268420/capsule_184x69.jpg" class="img-ss-list"> Aura Kingdom</a></td>
+<td class="treleasedate" data-order="2014-07-01">Jul 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="52">52% (80%)</td><td data-order="2041417">2,041,417 <font class="small">&plusmn;36,860</font></td><td class="tplaytime" data-order="942">15:42 (01:10)</td></tr>
+<tr>
+<td>218</td>
+<td data-order="Kingdom Wars"><a href=/app/227180><img src="http://cdn.akamai.steamstatic.com/steam/apps/227180/capsule_184x69.jpg" class="img-ss-list"> Kingdom Wars</a></td>
+<td class="treleasedate" data-order="2013-04-01">Apr 1, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="483221">483,221 <font class="small">&plusmn;17,976</font></td><td class="tplaytime" data-order="560">09:20 (00:55)</td></tr>
+<tr>
+<td>219</td>
+<td data-order="APB Reloaded"><a href=/app/113400><img src="http://cdn.akamai.steamstatic.com/steam/apps/113400/capsule_184x69.jpg" class="img-ss-list"> APB Reloaded</a></td>
+<td class="treleasedate" data-order="2011-12-06">Dec 6, 2011</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="25">25% (65%)</td><td data-order="4102998">4,102,998 <font class="small">&plusmn;52,093</font></td><td class="tplaytime" data-order="1568">26:08 (02:24)</td></tr>
+<tr>
+<td>220</td>
+<td data-order="Take Thy Throne"><a href=/app/491260><img src="http://cdn.akamai.steamstatic.com/steam/apps/491260/capsule_184x69.jpg" class="img-ss-list"> Take Thy Throne</a></td>
+<td class="treleasedate" data-order="2016-07-05">Jul 5, 2016</td>
+<td class="tprice" data-order="399">$3.99</td><td class="tuserscore" data-order="39">39% (74%)</td><td data-order="7013">7,013 <font class="small">&plusmn;2,167</font></td><td class="tplaytime" data-order="149">02:29 (02:42)</td></tr>
+<tr>
+<td>221</td>
+<td data-order="Imperia Online"><a href=/app/424780><img src="http://cdn.akamai.steamstatic.com/steam/apps/424780/capsule_184x69.jpg" class="img-ss-list"> Imperia Online</a></td>
+<td class="treleasedate" data-order="2016-04-15">Apr 15, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="4">4% (35%)</td><td data-order="60490">60,490 <font class="small">&plusmn;6,364</font></td><td class="tplaytime" data-order="305">05:05 (00:11)</td></tr>
+<tr>
+<td>222</td>
+<td data-order="Elsword"><a href=/app/237310><img src="http://cdn.akamai.steamstatic.com/steam/apps/237310/capsule_184x69.jpg" class="img-ss-list"> Elsword</a></td>
+<td class="treleasedate" data-order="2014-07-02">Jul 2, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="52">52% (80%)</td><td data-order="1009224">1,009,224 <font class="small">&plusmn;25,958</font></td><td class="tplaytime" data-order="1409">23:29 (01:13)</td></tr>
+<tr>
+<td>223</td>
+<td data-order="Mabinogi"><a href=/app/212200><img src="http://cdn.akamai.steamstatic.com/steam/apps/212200/capsule_184x69.jpg" class="img-ss-list"> Mabinogi</a></td>
+<td class="treleasedate" data-order="2012-12-06">Dec 6, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="43">43% (76%)</td><td data-order="517411">517,411 <font class="small">&plusmn;18,600</font></td><td class="tplaytime" data-order="3723">62:03 (00:56)</td></tr>
+<tr>
+<td>224</td>
+<td data-order="Woodle Tree 2: Worlds"><a href=/app/495350><img src="http://cdn.akamai.steamstatic.com/steam/apps/495350/capsule_184x69.jpg" class="img-ss-list"> Woodle Tree 2: Worlds</a></td>
+<td class="treleasedate" data-order="2016-07-27">Jul 27, 2016</td>
+<td class="tprice" data-order="399">$3.99</td><td class="tuserscore" data-order="81">81% (91%)</td><td data-order="2630">2,630 <font class="small">&plusmn;1,327</font></td><td class="tplaytime" data-order="106">01:46 (02:27)</td></tr>
+<tr>
+<td>225</td>
+<td data-order="Atulos Online"><a href=/app/449470><img src="http://cdn.akamai.steamstatic.com/steam/apps/449470/capsule_184x69.jpg" class="img-ss-list"> Atulos Online</a></td>
+<td class="treleasedate" data-order="2016-04-30">Apr 30, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="31">31% (69%)</td><td data-order="42957">42,957 <font class="small">&plusmn;5,363</font></td><td class="tplaytime" data-order="128">02:08 (00:14)</td></tr>
+<tr>
+<td>226</td>
+<td data-order="Governor of poker 3"><a href=/app/436150><img src="http://cdn.akamai.steamstatic.com/steam/apps/436150/capsule_184x69.jpg" class="img-ss-list"> Governor of poker 3</a></td>
+<td class="treleasedate" data-order="2016-02-19">Feb 19, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="34">34% (71%)</td><td data-order="285620">285,620 <font class="small">&plusmn;13,824</font></td><td class="tplaytime" data-order="293">04:53 (00:50)</td></tr>
+<tr>
+<td>227</td>
+<td data-order="VEGA Conflict"><a href=/app/339600><img src="http://cdn.akamai.steamstatic.com/steam/apps/339600/capsule_184x69.jpg" class="img-ss-list"> VEGA Conflict</a></td>
+<td class="treleasedate" data-order="2015-12-14">Dec 14, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="19">19% (60%)</td><td data-order="311744">311,744 <font class="small">&plusmn;14,442</font></td><td class="tplaytime" data-order="3135">52:15 (00:46)</td></tr>
+<tr>
+<td>228</td>
+<td data-order="Otherland"><a href=/app/376310><img src="http://cdn.akamai.steamstatic.com/steam/apps/376310/capsule_184x69.jpg" class="img-ss-list"> Otherland</a></td>
+<td class="treleasedate" data-order="2015-09-10">Sep 10, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="16">16% (57%)</td><td data-order="6663">6,663 <font class="small">&plusmn;2,112</font></td><td class="tplaytime" data-order="248">04:08 (01:45)</td></tr>
+<tr>
+<td>229</td>
+<td data-order="Alganon"><a href=/app/350660><img src="http://cdn.akamai.steamstatic.com/steam/apps/350660/capsule_184x69.jpg" class="img-ss-list"> Alganon</a></td>
+<td class="treleasedate" data-order="2015-05-19">May 19, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="4">4% (35%)</td><td data-order="85914">85,914 <font class="small">&plusmn;7,584</font></td><td class="tplaytime" data-order="295">04:55 (00:19)</td></tr>
+<tr>
+<td>230</td>
+<td data-order="Shroud of the Avatar: Forsaken Virtues"><a href=/app/326160><img src="http://cdn.akamai.steamstatic.com/steam/apps/326160/capsule_184x69.jpg" class="img-ss-list"> Shroud of the Avatar: Forsaken Virtues</a></td>
+<td class="treleasedate" data-order="2014-11-24">Nov 24, 2014</td>
+<td class="tprice" data-order="3999">$39.99</td><td class="tuserscore" data-order="23">23% (63%)</td><td data-order="32437">32,437 <font class="small">&plusmn;4,660</font></td><td class="tplaytime" data-order="1969">32:49 (03:24)</td></tr>
+<tr>
+<td>231</td>
+<td data-order="My Lands"><a href=/app/290730><img src="http://cdn.akamai.steamstatic.com/steam/apps/290730/capsule_184x69.jpg" class="img-ss-list"> My Lands</a></td>
+<td class="treleasedate" data-order="2014-09-16">Sep 16, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="69">69% (87%)</td><td data-order="273697">273,697 <font class="small">&plusmn;13,533</font></td><td class="tplaytime" data-order="1322">22:02 (00:16)</td></tr>
+<tr>
+<td>232</td>
+<td data-order="Orake 2D MMORPG"><a href=/app/516510><img src="http://cdn.akamai.steamstatic.com/steam/apps/516510/capsule_184x69.jpg" class="img-ss-list"> Orake 2D MMORPG</a></td>
+<td class="treleasedate" data-order="2016-08-23">Aug 23, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="4909">4,909 <font class="small">&plusmn;1,813</font></td><td class="tplaytime" data-order="147">02:27 (00:09)</td></tr>
+<tr>
+<td>233</td>
+<td data-order="Age of Cavemen"><a href=/app/454600><img src="http://cdn.akamai.steamstatic.com/steam/apps/454600/capsule_184x69.jpg" class="img-ss-list"> Age of Cavemen</a></td>
+<td class="treleasedate" data-order="2016-05-24">May 24, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="14">14% (54%)</td><td data-order="139741">139,741 <font class="small">&plusmn;9,672</font></td><td class="tplaytime" data-order="120">02:00 (00:23)</td></tr>
+<tr>
+<td>234</td>
+<td data-order="Age of Magic CCG"><a href=/app/426970><img src="http://cdn.akamai.steamstatic.com/steam/apps/426970/capsule_184x69.jpg" class="img-ss-list"> Age of Magic CCG</a></td>
+<td class="treleasedate" data-order="2016-03-20">Mar 20, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="17">17% (58%)</td><td data-order="40678">40,678 <font class="small">&plusmn;5,219</font></td><td class="tplaytime" data-order="546">09:06 (00:40)</td></tr>
+<tr>
+<td>235</td>
+<td data-order="Granado Espada"><a href=/app/319730><img src="http://cdn.akamai.steamstatic.com/steam/apps/319730/capsule_184x69.jpg" class="img-ss-list"> Granado Espada</a></td>
+<td class="treleasedate" data-order="2016-01-07">Jan 7, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="6">6% (41%)</td><td data-order="68030">68,030 <font class="small">&plusmn;6,749</font></td><td class="tplaytime" data-order="390">06:30 (00:16)</td></tr>
+<tr>
+<td>236</td>
+<td data-order="Golden Rush"><a href=/app/385890><img src="http://cdn.akamai.steamstatic.com/steam/apps/385890/capsule_184x69.jpg" class="img-ss-list"> Golden Rush</a></td>
+<td class="treleasedate" data-order="2015-09-23">Sep 23, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="7">7% (44%)</td><td data-order="137988">137,988 <font class="small">&plusmn;9,611</font></td><td class="tplaytime" data-order="466">07:46 (00:28)</td></tr>
+<tr>
+<td>237</td>
+<td data-order="Wrath of Athena"><a href=/app/373100><img src="http://cdn.akamai.steamstatic.com/steam/apps/373100/capsule_184x69.jpg" class="img-ss-list"> Wrath of Athena</a></td>
+<td class="treleasedate" data-order="2015-05-29">May 29, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="3">3% (32%)</td><td data-order="95733">95,733 <font class="small">&plusmn;8,005</font></td><td class="tplaytime" data-order="58">00:58 (00:04)</td></tr>
+<tr>
+<td>238</td>
+<td data-order="Karos"><a href=/app/337410><img src="http://cdn.akamai.steamstatic.com/steam/apps/337410/capsule_184x69.jpg" class="img-ss-list"> Karos</a></td>
+<td class="treleasedate" data-order="2014-12-24">Dec 24, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="11">11% (50%)</td><td data-order="318758">318,758 <font class="small">&plusmn;14,603</font></td><td class="tplaytime" data-order="357">05:57 (00:01)</td></tr>
+<tr>
+<td>239</td>
+<td data-order="Landmark"><a href=/app/297810><img src="http://cdn.akamai.steamstatic.com/steam/apps/297810/capsule_184x69.jpg" class="img-ss-list"> Landmark</a></td>
+<td class="treleasedate" data-order="2016-06-10">Jun 10, 2016</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="4">4% (35%)</td><td data-order="74166">74,166 <font class="small">&plusmn;7,046</font></td><td class="tplaytime" data-order="907">15:07 (04:53)</td></tr>
+<tr>
+<td>240</td>
+<td data-order="Rust"><a href=/app/252490><img src="http://cdn.akamai.steamstatic.com/steam/apps/252490/capsule_184x69.jpg" class="img-ss-list"> Rust</a></td>
+<td class="treleasedate" data-order="2013-12-11">Dec 11, 2013</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="54">54% (81%)</td><td data-order="4357408">4,357,408 <font class="small">&plusmn;53,663</font></td><td class="tplaytime" data-order="5498">91:38 (22:08)</td></tr>
+<tr>
+<td>241</td>
+<td data-order="Dungeon Party"><a href=/app/215870><img src="http://cdn.akamai.steamstatic.com/steam/apps/215870/capsule_184x69.jpg" class="img-ss-list"> Dungeon Party</a></td>
+<td class="treleasedate" data-order="2013-03-13">Mar 13, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="5">5% (38%)</td><td data-order="310692">310,692 <font class="small">&plusmn;14,418</font></td><td class="tplaytime" data-order="20">00:20 (00:09)</td></tr>
+<tr>
+<td>242</td>
+<td data-order="Space Universe"><a href=/app/479180><img src="http://cdn.akamai.steamstatic.com/steam/apps/479180/capsule_184x69.jpg" class="img-ss-list"> Space Universe</a></td>
+<td class="treleasedate" data-order="2016-06-15">Jun 15, 2016</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="514">514 <font class="small">&plusmn;1,005</font></td><td class="tplaytime" data-order="28">00:28 (00:28)</td></tr>
+<tr>
+<td>243</td>
+<td data-order="StarBreak"><a href=/app/420790><img src="http://cdn.akamai.steamstatic.com/steam/apps/420790/capsule_184x69.jpg" class="img-ss-list"> StarBreak</a></td>
+<td class="treleasedate" data-order="2016-05-10">May 10, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="45">45% (77%)</td><td data-order="167444">167,444 <font class="small">&plusmn;10,586</font></td><td class="tplaytime" data-order="184">03:04 (00:21)</td></tr>
+<tr>
+<td>244</td>
+<td data-order="Time of Dragons"><a href=/app/353130><img src="http://cdn.akamai.steamstatic.com/steam/apps/353130/capsule_184x69.jpg" class="img-ss-list"> Time of Dragons</a></td>
+<td class="treleasedate" data-order="2016-02-01">Feb 1, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="474630">474,630 <font class="small">&plusmn;17,816</font></td><td class="tplaytime" data-order="64">01:04 (00:14)</td></tr>
+<tr>
+<td>245</td>
+<td data-order="The Final Frontier: Space Simulator"><a href=/app/416140><img src="http://cdn.akamai.steamstatic.com/steam/apps/416140/capsule_184x69.jpg" class="img-ss-list"> The Final Frontier: Space Simulator</a></td>
+<td class="treleasedate" data-order="2016-06-30">Jun 30, 2016</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="533">533 <font class="small">&plusmn;737</font></td><td class="tplaytime" data-order="12">00:12 (00:11)</td></tr>
+<tr>
+<td>246</td>
+<td data-order="Lif"><a href=/app/346220><img src="http://cdn.akamai.steamstatic.com/steam/apps/346220/capsule_184x69.jpg" class="img-ss-list"> Lif</a></td>
+<td class="treleasedate" data-order="2016-01-21">Jan 21, 2016</td>
+<td class="tprice" data-order="899">$8.99</td><td class="tuserscore" data-order="19">19% (60%)</td><td data-order="3331">3,331 <font class="small">&plusmn;1,493</font></td><td class="tplaytime" data-order="338">05:38 (02:17)</td></tr>
+<tr>
+<td>247</td>
+<td data-order="Dark Forester"><a href=/app/349450><img src="http://cdn.akamai.steamstatic.com/steam/apps/349450/capsule_184x69.jpg" class="img-ss-list"> Dark Forester</a></td>
+<td class="treleasedate" data-order="2015-02-09">Feb 9, 2015</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="23">23% (63%)</td><td data-order="3507">3,507 <font class="small">&plusmn;1,532</font></td><td class="tplaytime" data-order="16">00:16 (00:20)</td></tr>
+<tr>
+<td>248</td>
+<td data-order="Cannons Lasers Rockets"><a href=/app/265770><img src="http://cdn.akamai.steamstatic.com/steam/apps/265770/capsule_184x69.jpg" class="img-ss-list"> Cannons Lasers Rockets</a></td>
+<td class="treleasedate" data-order="2014-08-25">Aug 25, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="1">1% (23%)</td><td data-order="208297">208,297 <font class="small">&plusmn;11,807</font></td><td class="tplaytime" data-order="16">00:16 (00:08)</td></tr>
+<tr>
+<td>249</td>
+<td data-order="Perpetuum"><a href=/app/223410><img src="http://cdn.akamai.steamstatic.com/steam/apps/223410/capsule_184x69.jpg" class="img-ss-list"> Perpetuum</a></td>
+<td class="treleasedate" data-order="2014-10-17">Oct 17, 2014</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="34">34% (71%)</td><td data-order="16657">16,657 <font class="small">&plusmn;3,339</font></td><td class="tplaytime" data-order="1877">31:17 (03:35)</td></tr>
+<tr>
+<td>250</td>
+<td data-order="MIGHT"><a href=/app/497270><img src="http://cdn.akamai.steamstatic.com/steam/apps/497270/capsule_184x69.jpg" class="img-ss-list"> MIGHT</a></td>
+<td class="treleasedate" data-order="2016-07-13">Jul 13, 2016</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="4383">4,383 <font class="small">&plusmn;1,713</font></td><td class="tplaytime" data-order="29">00:29 (00:25)</td></tr>
+<tr>
+<td>251</td>
+<td data-order="CONTASION 2"><a href=/app/428940><img src="http://cdn.akamai.steamstatic.com/steam/apps/428940/capsule_184x69.jpg" class="img-ss-list"> CONTASION 2</a></td>
+<td class="treleasedate" data-order="2016-04-22">Apr 22, 2016</td>
+<td class="tprice" data-order="699">$6.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="2104">2,104 <font class="small">&plusmn;1,187</font></td><td class="tplaytime" data-order="0">00:00 (00:00)</td></tr>
+<tr>
+<td>252</td>
+<td data-order="Heliborne"><a href=/app/433530><img src="http://cdn.akamai.steamstatic.com/steam/apps/433530/capsule_184x69.jpg" class="img-ss-list"> Heliborne</a></td>
+<td class="treleasedate" data-order="2016-02-15">Feb 15, 2016</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="52">52% (80%)</td><td data-order="17533">17,533 <font class="small">&plusmn;3,426</font></td><td class="tplaytime" data-order="231">03:51 (01:28)</td></tr>
+<tr>
+<td>253</td>
+<td data-order="The Isle"><a href=/app/376210><img src="http://cdn.akamai.steamstatic.com/steam/apps/376210/capsule_184x69.jpg" class="img-ss-list"> The Isle</a></td>
+<td class="treleasedate" data-order="2015-12-01">Dec 1, 2015</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="30">30% (68%)</td><td data-order="58211">58,211 <font class="small">&plusmn;6,243</font></td><td class="tplaytime" data-order="1853">30:53 (06:18)</td></tr>
+<tr>
+<td>254</td>
+<td data-order="Dream Of Mirror Online"><a href=/app/335820><img src="http://cdn.akamai.steamstatic.com/steam/apps/335820/capsule_184x69.jpg" class="img-ss-list"> Dream Of Mirror Online</a></td>
+<td class="treleasedate" data-order="2015-08-14">Aug 14, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="10">10% (49%)</td><td data-order="166918">166,918 <font class="small">&plusmn;10,570</font></td><td class="tplaytime" data-order="750">12:30 (00:14)</td></tr>
+<tr>
+<td>255</td>
+<td data-order="Selfie: Sisters of the Amniotic Lens"><a href=/app/287140><img src="http://cdn.akamai.steamstatic.com/steam/apps/287140/capsule_184x69.jpg" class="img-ss-list"> Selfie: Sisters of the Amniotic Lens</a></td>
+<td class="treleasedate" data-order="2015-05-08">May 8, 2015</td>
+<td class="tprice" data-order="499">$4.99</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="13676">13,676 <font class="small">&plusmn;3,026</font></td><td class="tplaytime" data-order="161">02:41 (02:50)</td></tr>
+<tr>
+<td>256</td>
+<td data-order="Warside"><a href=/app/320590><img src="http://cdn.akamai.steamstatic.com/steam/apps/320590/capsule_184x69.jpg" class="img-ss-list"> Warside</a></td>
+<td class="treleasedate" data-order="2015-05-05">May 5, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="25">25% (65%)</td><td data-order="153067">153,067 <font class="small">&plusmn;10,122</font></td><td class="tplaytime" data-order="81">01:21 (00:26)</td></tr>
+<tr>
+<td>257</td>
+<td data-order="Counter-Strike Nexon: Zombies"><a href=/app/273110><img src="http://cdn.akamai.steamstatic.com/steam/apps/273110/capsule_184x69.jpg" class="img-ss-list"> Counter-Strike Nexon: Zombies</a></td>
+<td class="treleasedate" data-order="2014-10-07">Oct 7, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="24">24% (64%)</td><td data-order="6302566">6,302,566 <font class="small">&plusmn;64,345</font></td><td class="tplaytime" data-order="803">13:23 (00:38)</td></tr>
+<tr>
+<td>258</td>
+<td data-order="FINAL FANTASY XI: Ultimate Collection Seekers Edition NA"><a href=/app/230330><img src="http://cdn.akamai.steamstatic.com/steam/apps/230330/capsule_184x69.jpg" class="img-ss-list"> FINAL FANTASY XI: Ultimate Collection Seekers Edition NA</a></td>
+<td class="treleasedate" data-order="2013-04-19">Apr 19, 2013</td>
+<td class="tprice" data-order="3999">$39.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="16481">16,481 <font class="small">&plusmn;3,322</font></td><td class="tplaytime" data-order="1788">29:48 (00:16)</td></tr>
+<tr>
+<td>259</td>
+<td data-order="EverQuest Free-to-Play"><a href=/app/205710><img src="http://cdn.akamai.steamstatic.com/steam/apps/205710/capsule_184x69.jpg" class="img-ss-list"> EverQuest Free-to-Play</a></td>
+<td class="treleasedate" data-order="2012-12-13">Dec 13, 2012</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="393976">393,976 <font class="small">&plusmn;16,233</font></td><td class="tplaytime" data-order="2457">40:57 (01:35)</td></tr>
+<tr>
+<td>260</td>
+<td data-order="Shop Heroes"><a href=/app/506140><img src="http://cdn.akamai.steamstatic.com/steam/apps/506140/capsule_184x69.jpg" class="img-ss-list"> Shop Heroes</a></td>
+<td class="treleasedate" data-order="2016-08-15">Aug 15, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="129572">129,572 <font class="small">&plusmn;9,313</font></td><td class="tplaytime" data-order="738">12:18 (01:18)</td></tr>
+<tr>
+<td>261</td>
+<td data-order="Linkrealms"><a href=/app/402450><img src="http://cdn.akamai.steamstatic.com/steam/apps/402450/capsule_184x69.jpg" class="img-ss-list"> Linkrealms</a></td>
+<td class="treleasedate" data-order="2016-05-19">May 19, 2016</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="1227">1,227 <font class="small">&plusmn;906</font></td><td class="tplaytime" data-order="121">02:01 (01:43)</td></tr>
+<tr>
+<td>262</td>
+<td data-order="Shakes and Fidget"><a href=/app/438040><img src="http://cdn.akamai.steamstatic.com/steam/apps/438040/capsule_184x69.jpg" class="img-ss-list"> Shakes and Fidget</a></td>
+<td class="treleasedate" data-order="2016-02-24">Feb 24, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="64">64% (85%)</td><td data-order="520217">520,217 <font class="small">&plusmn;18,650</font></td><td class="tplaytime" data-order="2284">38:04 (01:37)</td></tr>
+<tr>
+<td>263</td>
+<td data-order="Elements: Epic Heroes"><a href=/app/410490><img src="http://cdn.akamai.steamstatic.com/steam/apps/410490/capsule_184x69.jpg" class="img-ss-list"> Elements: Epic Heroes</a></td>
+<td class="treleasedate" data-order="2015-12-21">Dec 21, 2015</td>
+<td class="tprice" data-order="699">$6.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="4559">4,559 <font class="small">&plusmn;1,747</font></td><td class="tplaytime" data-order="19">00:19 (00:27)</td></tr>
+<tr>
+<td>264</td>
+<td data-order="Mortal Online"><a href=/app/287920><img src="http://cdn.akamai.steamstatic.com/steam/apps/287920/capsule_184x69.jpg" class="img-ss-list"> Mortal Online</a></td>
+<td class="treleasedate" data-order="2015-08-31">Aug 31, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="9">9% (47%)</td><td data-order="528984">528,984 <font class="small">&plusmn;18,807</font></td><td class="tplaytime" data-order="366">06:06 (00:30)</td></tr>
+<tr>
+<td>265</td>
+<td data-order="WarBirds - World War II Combat Aviation"><a href=/app/365620><img src="http://cdn.akamai.steamstatic.com/steam/apps/365620/capsule_184x69.jpg" class="img-ss-list"> WarBirds - World War II Combat Aviation</a></td>
+<td class="treleasedate" data-order="2015-05-05">May 5, 2015</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="3156">3,156 <font class="small">&plusmn;1,453</font></td><td class="tplaytime" data-order="3162">52:42 (66:28)</td></tr>
+<tr>
+<td>266</td>
+<td data-order="School of Dragons: How to Train Your Dragon"><a href=/app/332070><img src="http://cdn.akamai.steamstatic.com/steam/apps/332070/capsule_184x69.jpg" class="img-ss-list"> School of Dragons: How to Train Your Dragon</a></td>
+<td class="treleasedate" data-order="2014-12-04">Dec 4, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="10">10% (48%)</td><td data-order="1058493">1,058,493 <font class="small">&plusmn;26,582</font></td><td class="tplaytime" data-order="224">03:44 (00:46)</td></tr>
+<tr>
+<td>267</td>
+<td data-order="Guns and Robots"><a href=/app/293540><img src="http://cdn.akamai.steamstatic.com/steam/apps/293540/capsule_184x69.jpg" class="img-ss-list"> Guns and Robots</a></td>
+<td class="treleasedate" data-order="2014-08-04">Aug 4, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="26">26% (66%)</td><td data-order="1098469">1,098,469 <font class="small">&plusmn;27,078</font></td><td class="tplaytime" data-order="139">02:19 (00:23)</td></tr>
+<tr>
+<td>268</td>
+<td data-order="Happy Wars"><a href=/app/246280><img src="http://cdn.akamai.steamstatic.com/steam/apps/246280/capsule_184x69.jpg" class="img-ss-list"> Happy Wars</a></td>
+<td class="treleasedate" data-order="2014-07-23">Jul 23, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="45">45% (77%)</td><td data-order="1689171">1,689,171 <font class="small">&plusmn;33,548</font></td><td class="tplaytime" data-order="227">03:47 (00:46)</td></tr>
+<tr>
+<td>269</td>
+<td data-order="Allods Online My.com"><a href=/app/459160><img src="http://cdn.akamai.steamstatic.com/steam/apps/459160/capsule_184x69.jpg" class="img-ss-list"> Allods Online My.com</a></td>
+<td class="treleasedate" data-order="2016-06-03">Jun 3, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="19">19% (60%)</td><td data-order="70309">70,309 <font class="small">&plusmn;6,861</font></td><td class="tplaytime" data-order="388">06:28 (00:48)</td></tr>
+<tr>
+<td>270</td>
+<td data-order="ARK: Survival Of The Fittest"><a href=/app/407530><img src="http://cdn.akamai.steamstatic.com/steam/apps/407530/capsule_184x69.jpg" class="img-ss-list"> ARK: Survival Of The Fittest</a></td>
+<td class="treleasedate" data-order="2016-03-15">Mar 15, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="16">16% (57%)</td><td data-order="5521452">5,521,452 <font class="small">&plusmn;60,299</font></td><td class="tplaytime" data-order="208">03:28 (00:27)</td></tr>
+<tr>
+<td>271</td>
+<td data-order="Naval Action"><a href=/app/311310><img src="http://cdn.akamai.steamstatic.com/steam/apps/311310/capsule_184x69.jpg" class="img-ss-list"> Naval Action</a></td>
+<td class="treleasedate" data-order="2016-01-21">Jan 21, 2016</td>
+<td class="tprice" data-order="3999">$39.99</td><td class="tuserscore" data-order="49">49% (79%)</td><td data-order="78900">78,900 <font class="small">&plusmn;7,268</font></td><td class="tplaytime" data-order="4126">68:46 (11:02)</td></tr>
+<tr>
+<td>272</td>
+<td data-order="Lonath Online"><a href=/app/407700><img src="http://cdn.akamai.steamstatic.com/steam/apps/407700/capsule_184x69.jpg" class="img-ss-list"> Lonath Online</a></td>
+<td class="treleasedate" data-order="2015-10-16">Oct 16, 2015</td>
+<td class="tprice" data-order="699">$6.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="9468">9,468 <font class="small">&plusmn;2,518</font></td><td class="tplaytime" data-order="159">02:39 (06:52)</td></tr>
+<tr>
+<td>273</td>
+<td data-order="Echo of Soul"><a href=/app/290140><img src="http://cdn.akamai.steamstatic.com/steam/apps/290140/capsule_184x69.jpg" class="img-ss-list"> Echo of Soul</a></td>
+<td class="treleasedate" data-order="2015-06-22">Jun 22, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="19">19% (60%)</td><td data-order="498125">498,125 <font class="small">&plusmn;18,251</font></td><td class="tplaytime" data-order="638">10:38 (01:23)</td></tr>
+<tr>
+<td>274</td>
+<td data-order="TDP4:Team Battle"><a href=/app/340540><img src="http://cdn.akamai.steamstatic.com/steam/apps/340540/capsule_184x69.jpg" class="img-ss-list"> TDP4:Team Battle</a></td>
+<td class="treleasedate" data-order="2015-03-12">Mar 12, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="4">4% (36%)</td><td data-order="193744">193,744 <font class="small">&plusmn;11,387</font></td><td class="tplaytime" data-order="80">01:20 (00:14)</td></tr>
+<tr>
+<td>275</td>
+<td data-order="Face of Mankind"><a href=/app/299700><img src="http://cdn.akamai.steamstatic.com/steam/apps/299700/capsule_184x69.jpg" class="img-ss-list"> Face of Mankind</a></td>
+<td class="treleasedate" data-order="2014-07-17">Jul 17, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="5">5% (37%)</td><td data-order="463409">463,409 <font class="small">&plusmn;17,604</font></td><td class="tplaytime" data-order="183">03:03 (00:30)</td></tr>
+<tr>
+<td>276</td>
+<td data-order="ONRAID"><a href=/app/511800><img src="http://cdn.akamai.steamstatic.com/steam/apps/511800/capsule_184x69.jpg" class="img-ss-list"> ONRAID</a></td>
+<td class="treleasedate" data-order="2016-08-29">Aug 29, 2016</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="514">514 <font class="small">&plusmn;1,005</font></td><td class="tplaytime" data-order="356">05:56 (05:56)</td></tr>
+<tr>
+<td>277</td>
+<td data-order="Forsaken Uprising"><a href=/app/314700><img src="http://cdn.akamai.steamstatic.com/steam/apps/314700/capsule_184x69.jpg" class="img-ss-list"> Forsaken Uprising</a></td>
+<td class="treleasedate" data-order="2014-12-03">Dec 3, 2014</td>
+<td class="tprice" data-order="299">$2.99</td><td class="tuserscore" data-order="3">3% (31%)</td><td data-order="165691">165,691 <font class="small">&plusmn;10,531</font></td><td class="tplaytime" data-order="199">03:19 (03:21)</td></tr>
+<tr>
+<td>278</td>
+<td data-order="Infestation: Survivor Stories"><a href=/app/226700><img src="http://cdn.akamai.steamstatic.com/steam/apps/226700/capsule_184x69.jpg" class="img-ss-list"> Infestation: Survivor Stories</a></td>
+<td class="treleasedate" data-order="2012-12-17">Dec 17, 2012</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="7">7% (44%)</td><td data-order="997301">997,301 <font class="small">&plusmn;25,804</font></td><td class="tplaytime" data-order="2561">42:41 (06:21)</td></tr>
+<tr>
+<td>279</td>
+<td data-order="Garlock Online"><a href=/app/389530><img src="http://cdn.akamai.steamstatic.com/steam/apps/389530/capsule_184x69.jpg" class="img-ss-list"> Garlock Online</a></td>
+<td class="treleasedate" data-order="2016-05-30">May 30, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="0">0% (18%)</td><td data-order="36820">36,820 <font class="small">&plusmn;4,965</font></td><td class="tplaytime" data-order="11">00:11 (00:07)</td></tr>
+<tr>
+<td>280</td>
+<td data-order="Swordsman"><a href=/app/364110><img src="http://cdn.akamai.steamstatic.com/steam/apps/364110/capsule_184x69.jpg" class="img-ss-list"> Swordsman</a></td>
+<td class="treleasedate" data-order="2016-01-28">Jan 28, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="12">12% (51%)</td><td data-order="279308">279,308 <font class="small">&plusmn;13,671</font></td><td class="tplaytime" data-order="272">04:32 (00:35)</td></tr>
+<tr>
+<td>281</td>
+<td data-order="Affected Zone Tactics"><a href=/app/386640><img src="http://cdn.akamai.steamstatic.com/steam/apps/386640/capsule_184x69.jpg" class="img-ss-list"> Affected Zone Tactics</a></td>
+<td class="treleasedate" data-order="2015-11-17">Nov 17, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="24">24% (64%)</td><td data-order="52425">52,425 <font class="small">&plusmn;5,924</font></td><td class="tplaytime" data-order="338">05:38 (00:31)</td></tr>
+<tr>
+<td>282</td>
+<td data-order="Aberoth"><a href=/app/354200><img src="http://cdn.akamai.steamstatic.com/steam/apps/354200/capsule_184x69.jpg" class="img-ss-list"> Aberoth</a></td>
+<td class="treleasedate" data-order="2015-07-17">Jul 17, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="16">16% (57%)</td><td data-order="154294">154,294 <font class="small">&plusmn;10,162</font></td><td class="tplaytime" data-order="518">08:38 (00:11)</td></tr>
+<tr>
+<td>283</td>
+<td data-order="TDP5 Arena 3D"><a href=/app/355070><img src="http://cdn.akamai.steamstatic.com/steam/apps/355070/capsule_184x69.jpg" class="img-ss-list"> TDP5 Arena 3D</a></td>
+<td class="treleasedate" data-order="2015-03-26">Mar 26, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="7">7% (42%)</td><td data-order="143423">143,423 <font class="small">&plusmn;9,798</font></td><td class="tplaytime" data-order="89">01:29 (00:13)</td></tr>
+<tr>
+<td>284</td>
+<td data-order="Redemption"><a href=/app/330880><img src="http://cdn.akamai.steamstatic.com/steam/apps/330880/capsule_184x69.jpg" class="img-ss-list"> Redemption</a></td>
+<td class="treleasedate" data-order="2016-08-11">Aug 11, 2016</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="799">799 <font class="small">&plusmn;902</font></td><td class="tplaytime" data-order="4814">80:14 (94:29)</td></tr>
+<tr>
+<td>285</td>
+<td data-order="Madness Cubed"><a href=/app/453270><img src="http://cdn.akamai.steamstatic.com/steam/apps/453270/capsule_184x69.jpg" class="img-ss-list"> Madness Cubed</a></td>
+<td class="treleasedate" data-order="2016-05-12">May 12, 2016</td>
+<td class="tprice" data-order="599">$5.99</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="1929">1,929 <font class="small">&plusmn;1,136</font></td><td class="tplaytime" data-order="114">01:54 (01:30)</td></tr>
+<tr>
+<td>286</td>
+<td data-order="H1Z1: King of the Kill"><a href=/app/433850><img src="http://cdn.akamai.steamstatic.com/steam/apps/433850/capsule_184x69.jpg" class="img-ss-list"> H1Z1: King of the Kill</a></td>
+<td class="treleasedate" data-order="2016-02-17">Feb 17, 2016</td>
+<td class="tprice" data-order="1999">$19.99</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="2693836">2,693,836 <font class="small">&plusmn;42,301</font></td><td class="tplaytime" data-order="2080">34:40 (06:30)</td></tr>
+<tr>
+<td>287</td>
+<td data-order="Metal War Online: Retribution"><a href=/app/412470><img src="http://cdn.akamai.steamstatic.com/steam/apps/412470/capsule_184x69.jpg" class="img-ss-list"> Metal War Online: Retribution</a></td>
+<td class="treleasedate" data-order="2015-12-01">Dec 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="13">13% (53%)</td><td data-order="351896">351,896 <font class="small">&plusmn;15,343</font></td><td class="tplaytime" data-order="111">01:51 (00:15)</td></tr>
+<tr>
+<td>288</td>
+<td data-order="M4 Tank Brigade"><a href=/app/348810><img src="http://cdn.akamai.steamstatic.com/steam/apps/348810/capsule_184x69.jpg" class="img-ss-list"> M4 Tank Brigade</a></td>
+<td class="treleasedate" data-order="2015-08-17">Aug 17, 2015</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="877">877 <font class="small">&plusmn;766</font></td><td class="tplaytime" data-order="131">02:11 (01:55)</td></tr>
+<tr>
+<td>289</td>
+<td data-order="Deepworld"><a href=/app/340810><img src="http://cdn.akamai.steamstatic.com/steam/apps/340810/capsule_184x69.jpg" class="img-ss-list"> Deepworld</a></td>
+<td class="treleasedate" data-order="2015-04-22">Apr 22, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="18">18% (59%)</td><td data-order="191465">191,465 <font class="small">&plusmn;11,320</font></td><td class="tplaytime" data-order="145">02:25 (00:32)</td></tr>
+<tr>
+<td>290</td>
+<td data-order="LEGO Minifigures Online"><a href=/app/324790><img src="http://cdn.akamai.steamstatic.com/steam/apps/324790/capsule_184x69.jpg" class="img-ss-list"> LEGO Minifigures Online</a></td>
+<td class="treleasedate" data-order="2015-06-29">Jun 29, 2015</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="26">26% (66%)</td><td data-order="7013">7,013 <font class="small">&plusmn;2,167</font></td><td class="tplaytime" data-order="589">09:49 (05:42)</td></tr>
+<tr>
+<td>291</td>
+<td data-order="Panzer Warfare"><a href=/app/513880><img src="http://cdn.akamai.steamstatic.com/steam/apps/513880/capsule_184x69.jpg" class="img-ss-list"> Panzer Warfare</a></td>
+<td class="treleasedate" data-order="2016-08-25">Aug 25, 2016</td>
+<td class="tprice" data-order="199">$1.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="514">514 <font class="small">&plusmn;1,005</font></td><td class="tplaytime" data-order="0">00:00 (00:00)</td></tr>
+<tr>
+<td>292</td>
+<td data-order="Pixel Day - Gun Z"><a href=/app/474790><img src="http://cdn.akamai.steamstatic.com/steam/apps/474790/capsule_184x69.jpg" class="img-ss-list"> Pixel Day - Gun Z</a></td>
+<td class="treleasedate" data-order="2016-05-20">May 20, 2016</td>
+<td class="tprice" data-order="99">$0.99</td><td class="tuserscore" data-order="1">1% (24%)</td><td data-order="4208">4,208 <font class="small">&plusmn;1,678</font></td><td class="tplaytime" data-order="13">00:13 (00:17)</td></tr>
+<tr>
+<td>293</td>
+<td data-order="Mystica: The Ninth Society"><a href=/app/448150><img src="http://cdn.akamai.steamstatic.com/steam/apps/448150/capsule_184x69.jpg" class="img-ss-list"> Mystica: The Ninth Society</a></td>
+<td class="treleasedate" data-order="2016-03-06">Mar 6, 2016</td>
+<td class="tprice" data-order="199">$1.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="6312">6,312 <font class="small">&plusmn;2,056</font></td><td class="tplaytime" data-order="335">05:35 (05:59)</td></tr>
+<tr>
+<td>294</td>
+<td data-order="Divergence: Online"><a href=/app/422940><img src="http://cdn.akamai.steamstatic.com/steam/apps/422940/capsule_184x69.jpg" class="img-ss-list"> Divergence: Online</a></td>
+<td class="treleasedate" data-order="2016-01-06">Jan 6, 2016</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="1052">1,052 <font class="small">&plusmn;839</font></td><td class="tplaytime" data-order="412">06:52 (10:02)</td></tr>
+<tr>
+<td>295</td>
+<td data-order="Fasaria World Online"><a href=/app/398970><img src="http://cdn.akamai.steamstatic.com/steam/apps/398970/capsule_184x69.jpg" class="img-ss-list"> Fasaria World Online</a></td>
+<td class="treleasedate" data-order="2015-02-22">Feb 22, 2015</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="8767">8,767 <font class="small">&plusmn;2,423</font></td><td class="tplaytime" data-order="204">03:24 (03:16)</td></tr>
+<tr>
+<td>296</td>
+<td data-order="Metro Conflict"><a href=/app/356640><img src="http://cdn.akamai.steamstatic.com/steam/apps/356640/capsule_184x69.jpg" class="img-ss-list"> Metro Conflict</a></td>
+<td class="treleasedate" data-order="2015-06-22">Jun 22, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="12">12% (51%)</td><td data-order="506716">506,716 <font class="small">&plusmn;18,407</font></td><td class="tplaytime" data-order="218">03:38 (00:40)</td></tr>
+<tr>
+<td>297</td>
+<td data-order="KWAAN"><a href=/app/336790><img src="http://cdn.akamai.steamstatic.com/steam/apps/336790/capsule_184x69.jpg" class="img-ss-list"> KWAAN</a></td>
+<td class="treleasedate" data-order="2016-01-21">Jan 21, 2016</td>
+<td class="tprice" data-order="999">$9.99</td><td class="tuserscore" data-order="45">45% (77%)</td><td data-order="12273">12,273 <font class="small">&plusmn;2,866</font></td><td class="tplaytime" data-order="103">01:43 (01:01)</td></tr>
+<tr>
+<td>298</td>
+<td data-order="Xsyon - Prelude"><a href=/app/297470><img src="http://cdn.akamai.steamstatic.com/steam/apps/297470/capsule_184x69.jpg" class="img-ss-list"> Xsyon - Prelude</a></td>
+<td class="treleasedate" data-order="2014-12-29">Dec 29, 2014</td>
+<td class="tprice" data-order="2999">$29.99</td><td class="tuserscore" data-order="39">39% (74%)</td><td data-order="4208">4,208 <font class="small">&plusmn;1,678</font></td><td class="tplaytime" data-order="897">14:57 (04:44)</td></tr>
+<tr>
+<td>299</td>
+<td data-order="8BitMMO"><a href=/app/250420><img src="http://cdn.akamai.steamstatic.com/steam/apps/250420/capsule_184x69.jpg" class="img-ss-list"> 8BitMMO</a></td>
+<td class="treleasedate" data-order="2015-01-26">Jan 26, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="18">18% (59%)</td><td data-order="805135">805,135 <font class="small">&plusmn;23,192</font></td><td class="tplaytime" data-order="67">01:07 (00:15)</td></tr>
+<tr>
+<td>300</td>
+<td data-order="LuckCatchers"><a href=/app/454540><img src="http://cdn.akamai.steamstatic.com/steam/apps/454540/capsule_184x69.jpg" class="img-ss-list"> LuckCatchers</a></td>
+<td class="treleasedate" data-order="2016-06-15">Jun 15, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="11">11% (50%)</td><td data-order="90823">90,823 <font class="small">&plusmn;7,798</font></td><td class="tplaytime" data-order="623">10:23 (00:12)</td></tr>
+<tr>
+<td>301</td>
+<td data-order="AltspaceVR"><a href=/app/407060><img src="http://cdn.akamai.steamstatic.com/steam/apps/407060/capsule_184x69.jpg" class="img-ss-list"> AltspaceVR</a></td>
+<td class="treleasedate" data-order="2016-03-31">Mar 31, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="75">75% (89%)</td><td data-order="60841">60,841 <font class="small">&plusmn;6,382</font></td><td class="tplaytime" data-order="70">01:10 (00:17)</td></tr>
+<tr>
+<td>302</td>
+<td data-order="Warhammer 40,000 : Eternal Crusade"><a href=/app/375230><img src="http://cdn.akamai.steamstatic.com/steam/apps/375230/capsule_184x69.jpg" class="img-ss-list"> Warhammer 40,000 : Eternal Crusade</a></td>
+<td class="treleasedate" data-order="2016-01-26">Jan 26, 2016</td>
+<td class="tprice" data-order="3999">$39.99</td><td class="tuserscore" data-order="30">30% (68%)</td><td data-order="59088">59,088 <font class="small">&plusmn;6,290</font></td><td class="tplaytime" data-order="1003">16:43 (04:04)</td></tr>
+<tr>
+<td>303</td>
+<td data-order="Steel Ocean"><a href=/app/390670><img src="http://cdn.akamai.steamstatic.com/steam/apps/390670/capsule_184x69.jpg" class="img-ss-list"> Steel Ocean</a></td>
+<td class="treleasedate" data-order="2015-11-12">Nov 12, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="32">32% (70%)</td><td data-order="627346">627,346 <font class="small">&plusmn;20,478</font></td><td class="tplaytime" data-order="519">08:39 (00:42)</td></tr>
+<tr>
+<td>304</td>
+<td data-order="The Black Watchmen"><a href=/app/349220><img src="http://cdn.akamai.steamstatic.com/steam/apps/349220/capsule_184x69.jpg" class="img-ss-list"> The Black Watchmen</a></td>
+<td class="treleasedate" data-order="2015-08-27">Aug 27, 2015</td>
+<td class="tprice" data-order="1499">$14.99</td><td class="tuserscore" data-order="72">72% (88%)</td><td data-order="11221">11,221 <font class="small">&plusmn;2,741</font></td><td class="tplaytime" data-order="581">09:41 (05:10)</td></tr>
+<tr>
+<td>305</td>
+<td data-order="Immune"><a href=/app/348670><img src="http://cdn.akamai.steamstatic.com/steam/apps/348670/capsule_184x69.jpg" class="img-ss-list"> Immune</a></td>
+<td class="treleasedate" data-order="2015-03-25">Mar 25, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="17">17% (58%)</td><td data-order="74692">74,692 <font class="small">&plusmn;7,071</font></td><td class="tplaytime" data-order="215">03:35 (00:47)</td></tr>
+<tr>
+<td>306</td>
+<td data-order="Robocraft"><a href=/app/301520><img src="http://cdn.akamai.steamstatic.com/steam/apps/301520/capsule_184x69.jpg" class="img-ss-list"> Robocraft</a></td>
+<td class="treleasedate" data-order="2014-07-08">Jul 8, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="39">39% (74%)</td><td data-order="10425201">10,425,201 <font class="small">&plusmn;82,228</font></td><td class="tplaytime" data-order="1097">18:17 (02:25)</td></tr>
+<tr>
+<td>307</td>
+<td data-order="Champions of Regnum"><a href=/app/222520><img src="http://cdn.akamai.steamstatic.com/steam/apps/222520/capsule_184x69.jpg" class="img-ss-list"> Champions of Regnum</a></td>
+<td class="treleasedate" data-order="2013-02-27">Feb 27, 2013</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="18">18% (59%)</td><td data-order="399412">399,412 <font class="small">&plusmn;16,345</font></td><td class="tplaytime" data-order="539">08:59 (00:41)</td></tr>
+<tr>
+<td>308</td>
+<td data-order="Destiny of Ancient Kingdoms"><a href=/app/497940><img src="http://cdn.akamai.steamstatic.com/steam/apps/497940/capsule_184x69.jpg" class="img-ss-list"> Destiny of Ancient Kingdoms</a></td>
+<td class="treleasedate" data-order="2016-08-29">Aug 29, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="23">23% (63%)</td><td data-order="15955">15,955 <font class="small">&plusmn;3,268</font></td><td class="tplaytime" data-order="234">03:54 (00:05)</td></tr>
+<tr>
+<td>309</td>
+<td data-order="The SKIES"><a href=/app/337950><img src="http://cdn.akamai.steamstatic.com/steam/apps/337950/capsule_184x69.jpg" class="img-ss-list"> The SKIES</a></td>
+<td class="treleasedate" data-order="2016-04-16">Apr 16, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="11">11% (50%)</td><td data-order="671355">671,355 <font class="small">&plusmn;21,182</font></td><td class="tplaytime" data-order="119">01:59 (00:25)</td></tr>
+<tr>
+<td>310</td>
+<td data-order="Soccer Manager"><a href=/app/438600><img src="http://cdn.akamai.steamstatic.com/steam/apps/438600/capsule_184x69.jpg" class="img-ss-list"> Soccer Manager</a></td>
+<td class="treleasedate" data-order="2016-02-09">Feb 9, 2016</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="19">19% (60%)</td><td data-order="142547">142,547 <font class="small">&plusmn;9,768</font></td><td class="tplaytime" data-order="327">05:27 (00:17)</td></tr>
+<tr>
+<td>311</td>
+<td data-order="Legend of Dungeon: Masters"><a href=/app/405980><img src="http://cdn.akamai.steamstatic.com/steam/apps/405980/capsule_184x69.jpg" class="img-ss-list"> Legend of Dungeon: Masters</a></td>
+<td class="treleasedate" data-order="2015-11-30">Nov 30, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="22">22% (62%)</td><td data-order="102395">102,395 <font class="small">&plusmn;8,279</font></td><td class="tplaytime" data-order="59">00:59 (00:04)</td></tr>
+<tr>
+<td>312</td>
+<td data-order="RPG MO"><a href=/app/372800><img src="http://cdn.akamai.steamstatic.com/steam/apps/372800/capsule_184x69.jpg" class="img-ss-list"> RPG MO</a></td>
+<td class="treleasedate" data-order="2015-08-18">Aug 18, 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="45">45% (77%)</td><td data-order="241611">241,611 <font class="small">&plusmn;12,715</font></td><td class="tplaytime" data-order="420">07:00 (00:14)</td></tr>
+<tr>
+<td>313</td>
+<td data-order="Red Stone Online"><a href=/app/350700><img src="http://cdn.akamai.steamstatic.com/steam/apps/350700/capsule_184x69.jpg" class="img-ss-list"> Red Stone Online</a></td>
+<td class="treleasedate" data-order="2015-04-01">Apr 2015</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="15">15% (56%)</td><td data-order="92051">92,051 <font class="small">&plusmn;7,850</font></td><td class="tplaytime" data-order="136">02:16 (00:16)</td></tr>
+<tr>
+<td>314</td>
+<td data-order="RIP - Early Access"><a href=/app/318100><img src="http://cdn.akamai.steamstatic.com/steam/apps/318100/capsule_184x69.jpg" class="img-ss-list"> RIP - Early Access</a></td>
+<td class="treleasedate" data-order="2014-10-31">Oct 31, 2014</td>
+<td class="tprice" data-order="799">$7.99</td><td class="tuserscore" data-order="20">20% (61%)</td><td data-order="64874">64,874 <font class="small">&plusmn;6,590</font></td><td class="tplaytime" data-order="182">03:02 (01:56)</td></tr>
+<tr>
+<td>315</td>
+<td data-order="Xam"><a href=/app/269910><img src="http://cdn.akamai.steamstatic.com/steam/apps/269910/capsule_184x69.jpg" class="img-ss-list"> Xam</a></td>
+<td class="treleasedate" data-order="2014-07-15">Jul 15, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="0">N/A (N/A)</td><td data-order="335414">335,414 <font class="small">&plusmn;14,980</font></td><td class="tplaytime" data-order="30">00:30 (00:10)</td></tr>
+<tr>
+<td>316</td>
+<td data-order="Heroes & Generals"><a href=/app/227940><img src="http://cdn.akamai.steamstatic.com/steam/apps/227940/capsule_184x69.jpg" class="img-ss-list"> Heroes & Generals</a></td>
+<td class="treleasedate" data-order="2014-07-11">Jul 11, 2014</td>
+<td class="tprice" data-order="0">Free</td><td class="tuserscore" data-order="28">28% (67%)</td><td data-order="10385050">10,385,050 <font class="small">&plusmn;82,074</font></td><td class="tplaytime" data-order="738">12:18 (00:54)</td></tr>
+</tbody></table> </div>
+</div>
+<div class="col-md-6 col-lg-4 col-sm-12 m-t-10 m-b-10">
+<div class="panel panel-transparent">
+<div class="panel-heading ">
+<div class="panel-title">Overview
+</div>
+<div class="panel-body">
+<h3>Massively</h3><strong>Games in this genre</strong>: 316<br><strong>Average userscore</strong>: 62.68%<br><strong>Average metascore</strong>: 72.94%<br><strong>Average playtime</strong>: 15:42<br><strong>Total copies owned</strong>: 204,693,244<br><strong>Average price</strong>: $16.46<br>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4 col-sm-12 m-t-10 m-b-10">
+<div class="panel panel-transparent">
+<div class="panel-heading ">
+<div class="panel-title">Help
+</div>
+<div class="panel-body">
+<p><strong>Owners</strong>: Estimated number of people owning this game. The number might be way too small for new releases and sometimes way too big for games that had free weekend event recently. Read more on <a href=/about>About page</a>.</p>
+<p><strong>Playtime</strong>: Average hours played in total per person that have actually launched this game since March 2009. This time is calculated for the whole lifetime, not for the particular year.</p>
+<p><strong>Average score</strong>: Average users and metacritic score for all games with this score assigned.</p>
+<p><strong>Average playtime</strong>: Average lifetime playtime for all games where this data is available.</p>
+<p><strong>Games in this genre</strong>: Self-explaining - number of games released in this genre. Only inculdes games with sales data available.</p>
+<p><strong>Total copies owned</strong>: Refers to total copies of games in this genre acquired by users for the lifetime. Includes copies sold, downloaded for free and given out.</p>
+<p>This number might be too small for recently released games or too big for games that had a free weekend in the last couple of months.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container-fluid container-fixed-lg footer">
+<div class="copyright sm-text-center">
+<p class="small no-margin pull-left sm-pull-reset">
+<span class="hint-text">Copyright © 2015-2016
+<a href=http://galyonkin.com>Sergey Galyonkin</a>
+<i class="fa fa-twitter"></i><a href=http://twitter.com/Steam_Spy>Steam_Spy</a></span>
+<span class="sm-block"><a href="http://steampowered.com" class="m-l-10 m-r-10">Powered by Steam</a> | <a href="/about" class="m-l-10">About</a>
+</span>
+</p>
+<p class="small no-margin pull-right sm-pull-reset">
+<span class="hint-text"></span>
+</p>
+<div class="clearfix"></div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<script src="/pages/js/pages.js" type="text/javascript"></script>
+
+
+<script src="/assets/js/scripts.js" type="text/javascript"></script>
+<script src="/js/steamspy.js?5" type="text/javascript"></script>
+
+<script src="/js/genre.js?62" type="text/javascript"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61272710-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
